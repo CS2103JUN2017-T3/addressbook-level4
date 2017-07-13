@@ -5,20 +5,20 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>AddressBook Level 4 - User Guide</title>
+<title>2Do - User Guide</title>
 <link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>AddressBook Level 4 - User Guide</h1>
+<h1>2Do - User Guide</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>T3</code>      Since: <code>Jul 2017</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -27,17 +27,19 @@
 <li><a href="#quick-start">1. Quick Start</a></li>
 <li><a href="#features">2. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">2.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">2.5. Finding all persons containing any keyword in their name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">2.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#select-a-person-code-select-code">2.7. Select a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">2.8. Listing entered commands : <code>history</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">2.9. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">2.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">2.11. Saving the data</a></li>
+<li><a href="#viewing-help-code-help-h-code">2.1. Viewing help : <code>help / -h</code></a></li>
+<li><a href="#adding-a-task-code-add-a-code">2.2. Adding a task : <code>add / -a / +</code></a></li>
+<li><a href="#deleting-a-task-code-delete-del-d-code">2.3. Deleting a task : <code>delete / del / -d / -</code></a></li>
+<li><a href="#listing-all-tasks-code-list-l-code">2.4. Listing all tasks : <code>list / -l</code></a></li>
+<li><a href="#finding-a-task-code-find-f-code">2.5. Finding a task : <code>find / -f</code></a></li>
+<li><a href="#undoing-the-last-action-code-undo-u-code">2.6. Undoing the last action : <code>undo / -u</code></a></li>
+<li><a href="#editing-a-task-code-edit-e-code">2.7. Editing a task : <code>edit / -e</code></a></li>
+<li><a href="#marking-a-task-as-complete-code-mark-m-code">2.8. Marking a task as complete : <code>mark / -m</code></a></li>
+<li><a href="#marking-a-task-as-incomplete-code-unmark-un-code">2.9. Marking a task as incomplete : <code>unmark / -un</code></a></li>
+<li><a href="#editing-the-default-options-code-option-o-code">2.10. Editing the default options : <code>option / -o</code></a></li>
+<li><a href="#saving-list-code-save-s-code">2.11. Saving list : <code>save / -s</code></a></li>
+<li><a href="#clearing-list-code-clear-c-code">2.12. Clearing list : <code>clear / -c</code></a></li>
+<li><a href="#quitting-2do-code-exit-quit-q-code">2.13. Quitting 2Do : <code>exit / quit / -q</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">3. FAQ</a></li>
@@ -48,6 +50,14 @@
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">1. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/MainScreen.png" alt="MainScreen" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 2.1.1 : Sample GUI with pre-loaded tasks</em></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -67,38 +77,42 @@ This app will not work with earlier versions of Java 8.
 </div>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> from the <a href="../../../releases">releases</a> tab.</p>
+<p>Download the latest <code>2Do.jar</code> from the <a href="../../../releases">releases</a> tab.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your to-do list.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
-</div>
-</div>
+<p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 </li>
 <li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+<p>When the application starts up, tasks due within a certain amount of time (the default is 7 days) will be displayed.</p>
+</li>
+<li>
+<p>To interact with the task manager, open the main application.</p>
+</li>
+<li>
+<p>You will then see a list of your tasks sorted by due date.</p>
+</li>
+<li>
+<p>Below the list, there is a command box. Type a command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will display all commands available.</p>
 </li>
 <li>
 <p>Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>add projectX</code></strong> : adds a task with <strong>projectX</strong> as its name</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>list</code></strong> : lists all tasks</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete 2</code></strong> : deletes the 2nd task shown in the current list</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>quit</code></strong> : quits 2Do</p>
 </li>
 </ul>
 </div>
@@ -116,269 +130,476 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><strong>Command Format</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Words in <code>UPPER_CASE</code> are the parameters.</p>
-</li>
-<li>
-<p>Items in <code>SQUARE_BRACKETS</code> are optional.</p>
-</li>
-<li>
-<p>Items with <code>&#8230;&#8203;</code> after them can have multiple instances.</p>
-</li>
-<li>
-<p>Parameters can be in any order.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></h3>
-<div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></h3>
-<div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Persons can have any number of tags (including 0)
-</td>
-</tr>
-</table>
+<p><strong>Legend</strong></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
-</li>
-<li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">2.4. Editing a person : <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Arguments</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>{}: Compulsory argument</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>[]: Optional argument</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>[-h]: <em>[-h]</em> could be added behind the command word to operate the command on the to-do list history(completed tasks) <br>
+<code>Example: find [-h] 050517</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">2.5. Finding all persons containing any keyword in their name: <code>find</code></a></h3>
-<div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Dates</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>Format 1: mm/dd/yy<br>
+<code>Example: 05/04/17</code></p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>Format 2: day month [year]+
+<code>Example: 5 jan 2018</code></p>
 </li>
 <li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans</code> will match <code>Hans Bo</code></p>
+<p>Format 3: natural language<br>
+<code>Example: tomorrow</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find John</code><br>
-Returns <code>John Doe</code> but not <code>john</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns Any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">2.6. Deleting a person : <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes the specified person from the address book. Irreversible.<br>
-Format: <code>delete INDEX</code></p>
+<p>Time</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the most recent listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Format: 24HR
+<code>Example: 1759</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="select-a-person-code-select-code"><a class="link" href="#select-a-person-code-select-code">2.7. Select a person : <code>select</code></a></h3>
-<div class="paragraph">
-<p>Selects the person identified by the index number used in the last person listing.<br>
-Format: <code>select INDEX</code></p>
+<p>Reccurence</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Format 1: days / weeks / months / years<br>
+<code>Example: 4 days</code></p>
 </li>
 <li>
-<p>The index refers to the index number shown in the most recent listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Format 2: keywords<br>
+<code>Example: daily / weekly / yearly / annually</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Examples:</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-h-code"><a class="link" href="#viewing-help-code-help-h-code">2.1. Viewing help : <code>help / -h</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>help [name of command]</code><br>
+Example: <code>help add</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>select 2</code><br>
-Selects the 2nd person in the address book.</p>
+<p>Help without arguments will show the list of all commands along with the usage information</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>select 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command.</p>
+<p>Help with the name of a particular command will give information of that command</p>
+</li>
+<li>
+<p>Usage information for the particular command will also be given in the case of incorrect usage</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">2.8. Listing entered commands : <code>history</code></a></h3>
-<div class="paragraph">
-<p>Lists all the commands that you have entered in chronological order.<br>
-Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">2.9. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="adding-a-task-code-add-a-code"><a class="link" href="#adding-a-task-code-add-a-code">2.2. Adding a task : <code>add / -a / +</code></a></h3>
+<div class="sect3">
+<h4 id="general"><a class="link" href="#general">2.2.1. General</a></h4>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Format 1: <code>add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</code><br>
+Example: <code>add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/Reunion a/2 days r/yearly u/true</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a task with provided attributes and adds it to your list</p>
+</li>
+<li>
+<p><em>start</em> and <em>end</em> are in the format {date} {time}</p>
+</li>
+<li>
+<p><em>alarm</em> sets an notification to appear at the specified date</p>
+</li>
+<li>
+<p><code>u/true</code> can be added to indicate a task is urgent</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format 2: <code>add [-h] {name} on {date} at {time}</code><br>
+Example: <code>add project on friday at 2359</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Supports keywords <em>on</em>, <em>at</em> and <em>days</em></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="floating-tasks"><a class="link" href="#floating-tasks">2.2.2. Floating tasks</a></h4>
+<div class="paragraph">
+<p>Format: <code>add [-h] n/{name} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] u/[urgent]</code><br>
+Example: <code>add n/Complain about CS2103 d/To destress t/NUS a/15/07/17 1200 u/false</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Floating tasks can be added with <em>start</em>, <em>end</em> and <em>recurrence</em> fields empty</p>
+</li>
+<li>
+<p>You will not be able to set an <em>alarm</em> for floating tasks using the natural language format</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tasks-with-deadlines"><a class="link" href="#tasks-with-deadlines">2.2.3. Tasks with deadlines</a></h4>
+<div class="paragraph">
+<p>Format: <code>add [-h] n/{name} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</code><br>
+Example: <code>add n/Complete CS2103 V0.2 e/10/07/17 1000 d/Ensure project is at least a minimum viable product t/NUS a/2 days r/false u/true</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Tasks with deadlines can be added with the <em>start</em> field empty and the <em>end</em> field filled</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="events"><a class="link" href="#events">2.2.4. Events</a></h4>
+<div class="paragraph">
+<p>Format: <code>add [-h] n/{name} s/{start} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</code><br>
+Example: <code>add n/CS2103 final exams s/28/07/17 1430 e/28/07/17 1630 d/Pray hard t/NUS a/2 days r/false u/true</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Events can be added with the <em>start</em> and <em>end</em> fields filled</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="recurring-tasks"><a class="link" href="#recurring-tasks">2.2.5. Recurring tasks</a></h4>
+<div class="paragraph">
+<p>Format: <code>add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/{recurrence} u/[urgent]</code><br>
+Example: <code>add n/CS2103 monday pre-tutorial meeting s/10/07/17 1200 e/10/07/17 1500 d/For project t/NUS a/1 day r/weekly u/true</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Recurring tasks can be added with the recurrence field filled</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">2.10. Exiting the program : <code>exit</code></a></h3>
+<h3 id="deleting-a-task-code-delete-del-d-code"><a class="link" href="#deleting-a-task-code-delete-del-d-code">2.3. Deleting a task : <code>delete / del / -d / -</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>Format: <code>delete [-h] {index}</code><br>
+Example: <code>delete 1</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes task at that index (positive number) in the most recent call of list</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">2.11. Saving the data</a></h3>
+<h3 id="listing-all-tasks-code-list-l-code"><a class="link" href="#listing-all-tasks-code-list-l-code">2.4. Listing all tasks : <code>list / -l</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>Format: <code>list [-h] s/[start] e/[end]</code><br>
+Example: <code>list s/05/03/17</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all uncompleted tasks if no additional arguments</p>
+</li>
+<li>
+<p>Lists uncompleted tasks according to dates provided</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-task-code-find-f-code"><a class="link" href="#finding-a-task-code-find-f-code">2.5. Finding a task : <code>find / -f</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>find [-h] {keyword}</code><br>
+Example: <code>find work</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Scans through all tasks to find for keyword in any attribute and list it</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-the-last-action-code-undo-u-code"><a class="link" href="#undoing-the-last-action-code-undo-u-code">2.6. Undoing the last action : <code>undo / -u</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>undo</code><br>
+Example: <code>undo</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Undos the last successful action executed</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-task-code-edit-e-code"><a class="link" href="#editing-a-task-code-edit-e-code">2.7. Editing a task : <code>edit / -e</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>edit [-h] {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm] r/[recurrence] u/[urgent]</code><br>
+Example: <code>edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1630 d/Special Term t/NUS a/2 days u/true</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits task at that index in the most recent call of list</p>
+</li>
+<li>
+<p><em>new start</em> and <em>new end</em> are in the format {date} {time}</p>
+</li>
+<li>
+<p><em>new alarm</em> sets a new notification to appear at the specified date</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="marking-a-task-as-complete-code-mark-m-code"><a class="link" href="#marking-a-task-as-complete-code-mark-m-code">2.8. Marking a task as complete : <code>mark / -m</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>mark {index}</code><br>
+Example: <code>mark 4</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Marks the task at that index in the most recent call of a list as complete</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="marking-a-task-as-incomplete-code-unmark-un-code"><a class="link" href="#marking-a-task-as-incomplete-code-unmark-un-code">2.9. Marking a task as incomplete : <code>unmark / -un</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>unmark {index}</code><br>
+Example: <code>unmark 4</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Marks a (completed) task as incomplete</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-the-default-options-code-option-o-code"><a class="link" href="#editing-the-default-options-code-option-o-code">2.10. Editing the default options : <code>option / -o</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>option a/[alarm] m/[mark completion automatically]</code><br>
+Example: <code>option a/1 minute m/yes</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Option without parameters will show the general options that the user can edit and their explanations</p>
+</li>
+<li>
+<p>Default reminder alarm timing, before the deadline, can be edited</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Default setting is 7 days</p>
+</li>
+<li>
+<p>Range for reminders: 1 minute to 7 days</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Default automatic mark for completion setting can be edited</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Default setting will prompt user checking if the activity was completed</p>
+</li>
+<li>
+<p>This can be changed to automatically marking the activity as completed without prompting</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-list-code-save-s-code"><a class="link" href="#saving-list-code-save-s-code">2.11. Saving list : <code>save / -s</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>save [-h] [directory]</code><br>
+Example: <code>save C:\Program Files\Common Files\2Do.txt</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Saves the current to-do list and exports it as a text file in the directory specified</p>
+</li>
+<li>
+<p>By default, the file will be saved as to-do.txt on  <em>C:\Program Files</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>2Do creates the file if it does not exist</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-list-code-clear-c-code"><a class="link" href="#clearing-list-code-clear-c-code">2.12. Clearing list : <code>clear / -c</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>clear [-h]</code><br>
+Example: <code>clear</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Master resets the current to-do list</p>
+</li>
+<li>
+<p>Local file containing the current to-do list will be wiped clean as well</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="quitting-2do-code-exit-quit-q-code"><a class="link" href="#quitting-2do-code-exit-quit-q-code">2.13. Quitting 2Do : <code>exit / quit / -q</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>quit</code><br>
+Example: <code>quit</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Closes the 2Do application</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -387,52 +608,159 @@ There is no need to save manually.</p>
 <h2 id="faq"><a class="link" href="#faq">3. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p><strong>Q</strong>: How do I save my to-do list?<br>
+<strong>A</strong>: The data is saved in the hard disk automatically, by default as <strong>C:\Program Files\2Do.txt</strong>, after any command that changes the data. There is no need to save manually.</p>
+</div>
+<div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the application in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous to-do list folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">4. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main Format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help / -h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help [name of command]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help add</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add / -a /+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days r/yearly u/true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete / del / -d / -</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete [-h] {index}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list / -l</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list [-h] s/[start] e/[end]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list s/today</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find / -f</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find [-h] {keyword}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo / -u</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit / -e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit [-h] {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm] r/[recurrence] u/[urgent]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1430 d/Special Term t/NUS a/2 days u/true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark / -m</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark {index}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unmark / -un</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unmark {index}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unmark 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">option/ -o</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">option a/[alarm] m/ [mark completion automatically]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">option a/1 minute m/yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save / -s</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save [-h] [directory]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save C:\Program Files\Common Files\2Do.txt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear / -c</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear [-h]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit / quit / -q</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quit</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-23 00:25:52 +00:00
+Last updated 2017-07-13 18:22:23 +00:00
 </div>
 </div>
 </body>

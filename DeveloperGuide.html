@@ -5,20 +5,20 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>AddressBook Level 4 - Developer Guide</title>
+<title>2Do - Developer Guide</title>
 <link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>AddressBook Level 4 - Developer Guide</h1>
+<h1>2Do - Developer Guide</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>T3</code>      Since: <code>Jul 2017</code>         Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -172,7 +172,7 @@ This app will not work with earlier versions of Java 8.
 <p>Choose <code>External Configuration File</code> under <code>Type</code></p>
 </li>
 <li>
-<p>Enter an arbitrary configuration name e.g. addressbook</p>
+<p>Enter an arbitrary configuration name e.g. 2Do</p>
 </li>
 <li>
 <p>Import checkstyle configuration file found at <code>config/checkstyle/checkstyle.xml</code></p>
@@ -267,13 +267,13 @@ Click on the <code>files from packages</code> text after ticking in order to ena
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level4/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103JUN2017-T3/main/tree/master/docs/diagrams">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -294,7 +294,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
 </li>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to 2Do&#8217;s log file.</p>
 </li>
 </ul>
 </div>
@@ -304,13 +304,13 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The UI of the App.</p>
+<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The UI of the 2Do.</p>
 </li>
 <li>
 <p><a href="#logic-component"><strong><code>Logic</code></strong></a> : The command executor.</p>
 </li>
 <li>
-<p><a href="#model-component"><strong><code>Model</code></strong></a> : Holds the data of the App in-memory.</p>
+<p><a href="#model-component"><strong><code>Model</code></strong></a> : Holds the data of 2Do in-memory.</p>
 </li>
 <li>
 <p><a href="#storage-component"><strong><code>Storage</code></strong></a> : Reads data from, and writes data to, the hard disk.</p>
@@ -347,7 +347,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
+<img src="images/SDforDeleteTask.png" alt="SDforDeleteTask" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -360,7 +360,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</code> when the Address Book data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
+Note how the <code>Model</code> simply raises a <code>TaskBookChangedEvent</code> when the Taskbook data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
 </td>
 </tr>
 </table>
@@ -370,7 +370,7 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SDforDeletePersonEventHandling.png" alt="SDforDeletePersonEventHandling" width="800">
+<img src="images/SDforDeleteTaskEventHandling.png" alt="SDforDeleteTaskEventHandling" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -395,7 +395,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="sect2">
 <h3 id="ui-component"><a class="link" href="#ui-component">2.2. UI component</a></h3>
 <div class="paragraph">
-<p>Author: Alice Bee</p>
+<p>Author: Yogamurti Sutanto</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -406,13 +406,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><em>Figure 2.2.1 : Structure of the UI Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TaskListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -434,7 +434,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="sect2">
 <h3 id="logic-component"><a class="link" href="#logic-component">2.3. Logic component</a></h3>
 <div class="paragraph">
-<p>Author: Bernard Choo</p>
+<p>Author: Ang Lang Yi</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -446,7 +446,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -457,7 +457,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a task) and/or raise events.</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -469,7 +469,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
+<img src="images/DeleteTaskSdForLogic.png" alt="DeleteTaskSdForLogic" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -479,18 +479,18 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="sect2">
 <h3 id="model-component"><a class="link" href="#model-component">2.4. Model component</a></h3>
 <div class="paragraph">
-<p>Author: Cynthia Dharman</p>
+<p>Author: V Narendar Nag</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
+<img src="images/ModelComponentClassDiagram.png" alt="ModelComponentClassDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
 <p><em>Figure 2.4.1 : Structure of the Model Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -501,10 +501,10 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the Taskbook data.</p>
 </li>
 <li>
-<p>exposes a <code>UnmodifiableObservableList&lt;ReadOnlyPerson&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes a <code>UnmodifiableObservableList&lt;ReadOnlyTask&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -515,7 +515,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="sect2">
 <h3 id="storage-component"><a class="link" href="#storage-component">2.5. Storage component</a></h3>
 <div class="paragraph">
-<p>Author: Darius Foong</p>
+<p>Author: Teo Shu Qi</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -526,7 +526,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><em>Figure 2.5.1 : Structure of the Storage Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -537,15 +537,18 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>can save the Taskbook data in xml format and read it back.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>2Do allow users to save their data at a new filepath(File Directory must be available). The filepath can be specified via the Save command and will contain a new 2Do.xml document. StorageMananger will set the new filepath and save it into Config. 2Do will load from and save to the new filepath for current and future sessions until a new filepath is specified.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="common-classes"><a class="link" href="#common-classes">2.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>teamthree.twodo.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -642,15 +645,15 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+e.g. <code>teamthree.twodo.commons.StringUtilTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+e.g. <code>teamthree.twodo.storage.StorageManagerTest</code></p>
 </li>
 <li>
 <p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+e.g. <code>teamthree.twodo.logic.LogicManagerTest</code></p>
 </li>
 </ol>
 </div>
@@ -735,7 +738,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <p>Make sure you have set up GitHub Pages as described in <a href="UsingGithubPages.html#setting-up">UsingGithubPages.adoc</a>.</p>
 </li>
 <li>
-<p>Using Chrome, go to the <a href="UsingGithubPages.html#viewing-the-project-site">GitHub Pages version</a> of the documentation file. e.g. For <a href="UserGuide.html">UserGuide.adoc</a>, the URL will be <code>https://&lt;your-username-or-organization-name&gt;.github.io/addressbook-level4/docs/UserGuide.html</code>.</p>
+<p>Using Chrome, go to the <a href="UsingGithubPages.html#viewing-the-project-site">GitHub Pages version</a> of the documentation file. e.g. For <a href="UserGuide.html">UserGuide.adoc</a>, the URL will be <code>https://&lt;your-username-or-organization-name&gt;.github.io/main/docs/UserGuide.html</code>.</p>
 </li>
 <li>
 <p>Click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
@@ -757,7 +760,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">5.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+<p>A project often depends on third-party libraries. For example, 2Do depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
@@ -790,76 +793,323 @@ b. Require developers to download those libraries manually (this creates extra w
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use 2Do</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo the last action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">correct a mistake</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add tasks without specifying a date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#floating-task">floating tasks</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">describe my tasks in detail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add more information about the tasks, such as the venue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that have been cancelled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update my tasksâ€™ details for unforeseen circumstances, such as postponing a deadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add deadlines to my <a href="#floating-task">floating tasks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update <a href="#floating-task">floating tasks</a> if they then require a deadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark my tasks as completed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stop being reminded for tasks I have done</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark completed tasks as uncompleted again</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appropriately update my to-do list if the task then requires more follow-up action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark tasks as cannot do</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">properly take them out of my to-do list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see incomplete tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what I need to do</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which tasks are most urgent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see tasks that are related</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know related tasks easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search for tasks using keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find details of specific tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see all of my tasks in a convenient manner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list tasks this week or month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see only tasks with urgent deadlines to prevent clutter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set a reminder on tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of my tasks closer to their deadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a global reminder setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not need to set reminders for each task manually</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be alerted of tasks whose deadline has eclipsed but I have not marked as complete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decide on an appropriate follow-up action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">specify a storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access my to-do list using different devices</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">define <a href="#recurring-task">recurring tasks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not need to add the same task every time it repeats</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have flexible command formats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">execute actions in a more natural manner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have command shortcuts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">execute actions with ease and speed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo a command I have undone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo any unintended undo actions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many tagged tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear all tasks that have a certain tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">conveniently clear all related tasks once a project or milestone is completed or cancelled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my task history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">look back at the tasks I have completed so far</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visualise my task as a calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">more easily plan my schedule</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">launch the program quickly, by pressing a keyboard shortcut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">conveniently launch the program</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">experienced user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create my own shortcuts for my most frequently used commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">more conveniently use the program</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort tasks in different ways</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gain a better understanding of the tasks at hand</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get directions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get directions to the taskâ€™s location, from my current location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">block timeslots for events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stop scheduling events with conflicting timings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receive a warning if I try to schedule an event at a blocked timing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know of this timing conflict between events</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unblock timeslots that have been blocked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule other events in that timeslot</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">synchronize my tasks with my google calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access my to-do list from public computers</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{More to be added}</p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix B: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>For all use cases below, the <strong>System</strong> is <code>2Do</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise.</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-add-task" class="discrete">Use case: Add task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User requests to add a task with a name and optional details</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
-</li>
-<li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person Use case ends.</p>
+<p>2Do adds the task and shows a success message</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
 <div class="paragraph">
-<p>2a. The list is empty</p>
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>1b. User enters an end time that is earlier than the start time</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1b1. 2Do automatically adjusts the end time to the following day</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a task using its name</p>
+</li>
+<li>
+<p>2Do prompts the user to confirm deletion</p>
+</li>
+<li>
+<p>User confirms deletion</p>
+</li>
+<li>
+<p>2Do deletes the task and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>1b. Multiple tasks with same name has been detected</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1b1. 2Do displays all relevant tasks, and their <a href="#index">indices</a>, and prompts the user to choose the intended task to delete
+1b2. User chooses the task <a href="#index">index</a></p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 2</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3a. User does not confirm the request</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -868,19 +1118,509 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </blockquote>
 </div>
+<h3 id="use-case-list-tasks" class="discrete">Use case: List tasks</h3>
 <div class="paragraph">
-<p>3a. The given index is invalid</p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list all tasks</p>
+</li>
+<li>
+<p>2Do displays all tasks</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>2a. No tasks to display</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3a1. AddressBook shows an error message<br>
-Use case resumes at step 2</p>
+<p>2a1. 2Do displays a â€œNo task to displayâ€� message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-find-task" class="discrete">Use case: Find task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a task using a keyword</p>
+</li>
+<li>
+<p>2Do displays all relevant tasks</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
 </div>
 </blockquote>
 </div>
 <div class="paragraph">
-<p>{More to be added}</p>
+<p>2b. No tasks to display</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-undo-last-action" class="discrete">Use case: Undo last action</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to undo the last action</p>
+</li>
+<li>
+<p>2Do undos the last action and returns the to-do list to its previous state</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>2a. No actions were done previously</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>2a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-edit-task" class="discrete">Use case: Edit task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User searches for a task using <strong>list</strong> or <strong>find</strong></p>
+</li>
+<li>
+<p>2Do displays all relevant tasks</p>
+</li>
+<li>
+<p>User requests to edit the task by using its <a href="#index">index</a></p>
+</li>
+<li>
+<p>2Do updates the task and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>2b. No tasks to display</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 2</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-mark-task-as-complete" class="discrete">Use case: Mark task as complete</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User searches for a task using <strong>list</strong> or <strong>find</strong></p>
+</li>
+<li>
+<p>2Do displays all relevant tasks</p>
+</li>
+<li>
+<p>User requests to mark the task as complete by using its index</p>
+</li>
+<li>
+<p>2Do updates the task and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>2b. No tasks to display</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 2</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3b. Task is already marked as complete</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3b1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-mark-task-as-incomplete" class="discrete">Use case: Mark task as incomplete</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User searches for a completed task using <strong>list -h</strong> or <strong>find -h</strong></p>
+</li>
+<li>
+<p>2Do displays all relevant tasks</p>
+</li>
+<li>
+<p>User requests to mark the task as incomplete by using its index</p>
+</li>
+<li>
+<p>2Do updates the task and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>2b. No tasks to display</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 2</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3b. Task is already marked as complete</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3b1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-display-help-guide" class="discrete">Use case: Display help guide</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests for help guide</p>
+</li>
+<li>
+<p>2Do displays help guide</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-display-options" class="discrete">Use case: Display options</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view the general options available on 2Do</p>
+</li>
+<li>
+<p>2Do displays its general options</p>
+</li>
+<li>
+<p>User requests to change the general options</p>
+</li>
+<li>
+<p>2Do updates its general options</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>3a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-save-to-do-list" class="discrete">Use case: Save to-do list</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to save the to-do list</p>
+</li>
+<li>
+<p>2Do saves the current to-do list and exports it as a text file in the directory specified</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-clear-to-do-list" class="discrete">Use case: Clear to-do list</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear the to-do list</p>
+</li>
+<li>
+<p>2Do prompts the user to confirm the clear request</p>
+</li>
+<li>
+<p>User confirms the clear request</p>
+</li>
+<li>
+<p>2Do clears the to-do list and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. 2Do displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3a. User does not confirm the request</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<h3 id="use-case-quit-2do" class="discrete">Use case: Quit 2Do</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to quit 2Do</p>
+</li>
+<li>
+<p>2Do shuts down</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
 </div>
 </div>
 </div>
@@ -890,24 +1630,96 @@ Use case resumes at step 2</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>1.8.0_60</code> or higher installed.</p>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>1.8.0_60</code> or higher installed</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should handle at least 100 tasks without a noticeable decline in performance</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most tasks faster using commands than using the mouse</p>
+</li>
+<li>
+<p>Should have automated unit tests and open source code</p>
+</li>
+<li>
+<p>Should have user-friendly commands</p>
+</li>
+<li>
+<p>Should not require more than 3 seconds to startup</p>
+</li>
+<li>
+<p>Should not require more than 2 seconds to respond to a user request</p>
+</li>
+<li>
+<p>Should not require internet connection</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>{More to be added}</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="glossary"><a class="link" href="#glossary">Appendix D: Glossary</a></h2>
 <div class="sectionbody">
+<div id="name" class="paragraph">
+<p>Name</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Name of task</p>
+</div>
+</blockquote>
+</div>
+<div id="floating-task" class="paragraph">
+<p>Floating task</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Task without a fixed deadline</p>
+</div>
+</blockquote>
+</div>
+<div id="recurring-task" class="paragraph">
+<p>Recurring task</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Task that repeatedly needs to be done every week, month or year</p>
+</div>
+</blockquote>
+</div>
+<div id="index" class="paragraph">
+<p>Index</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Number assigned to a task to ease the operation of commands (E.g. add, delete, edit)</p>
+</div>
+</blockquote>
+</div>
+<div id="last-action" class="paragraph">
+<p>Last action</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Last command executed</p>
+</div>
+</blockquote>
+</div>
+<div id="history" class="paragraph">
+<p>History</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Completed tasks</p>
+</div>
+</blockquote>
+</div>
 <div id="mainstream-os" class="paragraph">
 <p>Mainstream OS</p>
 </div>
@@ -918,26 +1730,16 @@ Use case resumes at step 2</p>
 </div>
 </blockquote>
 </div>
-<div id="private-contact-detail" class="paragraph">
-<p>Private contact detail</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>A contact detail that is not meant to be shared with others</p>
-</div>
-</blockquote>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="product-survey"><a class="link" href="#product-survey">Appendix E: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Product Name</strong></p>
+<p><strong>Google Calendar</strong></p>
 </div>
 <div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
+<p>Author: Ang Lang Yi</p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -945,10 +1747,22 @@ Use case resumes at step 2</p>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>User friendly commands</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Simple interface that makes it easy to navigate around</p>
+</li>
+<li>
+<p>Calendar interface allows the user to easily find empty slots to schedule tasks</p>
+</li>
+<li>
+<p>Calendar can be viewed in a year, month, day or agenda format</p>
+</li>
+<li>
+<p>Import and view other peopleâ€™s calendars for better collaboration</p>
+</li>
+<li>
+<p>Reminders can be set to a task</p>
 </li>
 </ul>
 </div>
@@ -958,10 +1772,166 @@ Use case resumes at step 2</p>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p><a href="#floating-task">Floating tasks</a> are difficult to schedule</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Navigation requires mouse usage instead of command line</p>
+</li>
+<li>
+<p>Internet connection is required</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Todoist</strong></p>
+</div>
+<div class="paragraph">
+<p>Author: Teo Shu Qi</p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Features are easy to understand and use</p>
+</li>
+<li>
+<p>Different categories are available to separate different kinds of tasks</p>
+</li>
+<li>
+<p>Each category allows a weekly and daily view of its tasks</p>
+</li>
+<li>
+<p><a href="#recurring-task">Recurring tasks</a> can be added</p>
+</li>
+<li>
+<p>Different priority levels can be set for tasks</p>
+</li>
+<li>
+<p>Filter and find tasks according to priority level and <a href="#floating-task">floating tasks</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only tasks due for the next 7 days can be seen</p>
+</li>
+<li>
+<p>Some features (e.g. comments)  require a monthly subscription</p>
+</li>
+<li>
+<p>Navigation requires mouse usage instead of command line</p>
+</li>
+<li>
+<p>Internet connection is required</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Trello</strong></p>
+</div>
+<div class="paragraph">
+<p>Author: V Narendar Nag</p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple boards can be added to segregate different categories of tasks</p>
+</li>
+<li>
+<p>Lists can be added to a board to separate that category into even more sections</p>
+</li>
+<li>
+<p>A team can collaborate on a board together</p>
+</li>
+<li>
+<p>Reminders can be set to a task</p>
+</li>
+<li>
+<p>Comments can be added to a task for additional notes</p>
+</li>
+<li>
+<p>Images and attachments can be added to a task</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Features are not intuitive and requires reference to a guide to learn</p>
+</li>
+<li>
+<p>Troublesome to setup the calendar</p>
+</li>
+<li>
+<p><a href="#recurring-task">Recurring tasks</a> cannot be added</p>
+</li>
+<li>
+<p>A command line interface is not available</p>
+</li>
+<li>
+<p>Internet connection is required</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Wunderlist</strong></p>
+</div>
+<div class="paragraph">
+<p>Author: Yogamurti Sutanto</p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User friendly interface</p>
+</li>
+<li>
+<p>Various backgrounds to suit the user&#8217;s preferences</p>
+</li>
+<li>
+<p>Sort uncompleted tasks in various ways</p>
+</li>
+<li>
+<p>Tasks can be starred to indicate importance and segregate them from other tasks</p>
+</li>
+<li>
+<p>Categories can be added to tasks for better organization</p>
+</li>
+<li>
+<p>Multiple users can collaborate together on a particular category of the to-do list</p>
+</li>
+<li>
+<p>Reminders can be set to a task</p>
+</li>
+<li>
+<p>Subtask and notes can be added to a task</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A command line interface is not available</p>
+</li>
+<li>
+<p>Internet connection is required</p>
 </li>
 </ul>
 </div>
@@ -970,7 +1940,7 @@ Use case resumes at step 2</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-23 00:25:52 +00:00
+Last updated 2017-07-13 18:22:23 +00:00
 </div>
 </div>
 </body>
