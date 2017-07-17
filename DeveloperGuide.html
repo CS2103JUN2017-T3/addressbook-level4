@@ -331,11 +331,11 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component (see the <strong>simplified</strong> class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
+<img src="images/SimplifiedLogicClassDiagram.png" alt="SimplifiedLogicClassDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -798,14 +798,20 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo the last action</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">correct a mistake</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#floating-task">floating tasks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my <a href="#floating-task">floating tasks</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add tasks without specifying a date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#floating-task">floating tasks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#task-with-deadline">tasks with deadlines</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my <a href="#task-with-deadline">tasks with deadlines</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#event">events</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my <a href="#event">events</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -823,13 +829,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update my tasksâ€™ details for unforeseen circumstances, such as postponing a deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update my task details for unforeseen circumstances, such as postponing a deadline</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add deadlines to my <a href="#floating-task">floating tasks</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update <a href="#floating-task">floating tasks</a> if they then require a deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update my <a href="#floating-task">floating tasks</a> if they then require a deadline</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -846,26 +852,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark tasks as cannot do</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">properly take them out of my to-do list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see incomplete tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all my uncompleted tasks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know what I need to do</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by deadline</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know which tasks are most urgent</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see tasks that are related</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know related tasks easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all my completed tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">review and reflect on the tasks I have done</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -876,47 +870,29 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list all tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see all of my tasks in a convenient manner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks that are related by some category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know related tasks easily if I have tagged them with their respective categories</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list tasks this week or month</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see only tasks with urgent deadlines to prevent clutter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which tasks are most urgent</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set a reminder on tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of my tasks closer to their deadline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save my to-do list as a text file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a back-up copy of my to-do list and be able to view it across multiple devices</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a global reminder setting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not need to set reminders for each task manually</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo the last action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">correct a mistake</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be alerted of tasks whose deadline has eclipsed but I have not marked as complete</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">decide on an appropriate follow-up action</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">specify a storage location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">access my to-do list using different devices</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">define <a href="#recurring-task">recurring tasks</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not need to add the same task every time it repeats</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have flexible command formats</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">execute actions in a more natural manner</p></td>
@@ -924,8 +900,44 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have command shortcuts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">execute actions with ease and speed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add <a href="#recurring-task">recurring tasks</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not need to add the same task every time it repeats</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark tasks as cannot do</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">properly remove tasks that I am unable to complete out of my to-do list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list tasks this week or month</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see only tasks with urgent deadlines to prevent clutter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set a reminder on tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of my tasks closer to their deadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a global reminder setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not need to set reminders for each task manually</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be alerted of tasks whose deadline has eclipsed but I have not marked as complete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decide on an appropriate follow-up action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load a to-do list from a storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my to-do list from different devices and be able to manage multiple to-do lists</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -935,18 +947,18 @@ b. Require developers to download those libraries manually (this creates extra w
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have command shortcuts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">execute actions with ease and speed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user with many tagged tasks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">clear all tasks that have a certain tag</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">conveniently clear all related tasks once a project or milestone is completed or cancelled</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my task history</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">look back at the tasks I have completed so far</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">visualize my tasks as a calendar</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">more easily plan my schedule</p></td>
@@ -973,19 +985,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">get directions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">get directions to the taskâ€™s location, from my current location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get directions to the task&#8217;s location, from my current location</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">block timeslots for events</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stop scheduling events with conflicting timings</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">receive a warning if I try to schedule an event at a blocked timing</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know of this timing conflict between events</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
@@ -1009,17 +1015,17 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="paragraph">
 <p>For all use cases below, the <strong>System</strong> is <code>2Do</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise.</p>
 </div>
-<h3 id="use-case-add-task" class="discrete">Use case: Add task</h3>
+<h3 id="use-case-add-a-floating-task" class="discrete">Use case: Add a floating task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to add a task with a name and optional details</p>
+<p>User requests to add a floating task with the name field filled and the end and recurrence fields empty</p>
 </li>
 <li>
-<p>2Do adds the task and shows a success message</p>
+<p>System adds the floating task and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1035,7 +1041,88 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>1b. User enters an alarm parameter using the natural language format</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1b1. System displays an error message highlighting this issue</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<hr>
+<h3 id="use-case-add-a-task-with-a-deadline" class="discrete">Use case: Add a task with a deadline</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a task, with a deadline, with the name and end fields filled and the start field empty</p>
+</li>
+<li>
+<p>System adds the task, with a deadline, and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<hr>
+<h3 id="use-case-add-an-event" class="discrete">Use case: Add an event</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add an event with the name, start and end fields filled</p>
+</li>
+<li>
+<p>System adds the event and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1048,30 +1135,25 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1b1. 2Do automatically adjusts the end time to the following day</p>
+<p>1b1. System automatically adjusts the end time to the following day and displays a message highlighting this automatic adjustment</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
-<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<hr>
+<h3 id="use-case-add-a-recurring-task" class="discrete">Use case: Add a recurring task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to delete a task using its name</p>
+<p>User requests to add a recurring task with the name, end and recurrence fields filled</p>
 </li>
 <li>
-<p>2Do prompts the user to confirm deletion</p>
-</li>
-<li>
-<p>User confirms deletion</p>
-</li>
-<li>
-<p>2Do deletes the task and shows a success message</p>
+<p>System adds the recurring task and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1087,7 +1169,47 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<hr>
+<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a task using its name</p>
+</li>
+<li>
+<p>System prompts the user to confirm deletion</p>
+</li>
+<li>
+<p>User confirms deletion</p>
+</li>
+<li>
+<p>System deletes the task and shows a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1100,7 +1222,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1b1. 2Do displays all relevant tasks, and their <a href="#index">indices</a>, and prompts the user to choose the intended task to delete
+<p>1b1. System displays all relevant tasks, and their <a href="#index">indices</a>, and prompts the user to choose the intended task to delete<br>
 1b2. User chooses the task <a href="#index">index</a></p>
 </div>
 <div class="paragraph">
@@ -1118,6 +1240,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-list-tasks" class="discrete">Use case: List tasks</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1128,7 +1251,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to list all tasks</p>
 </li>
 <li>
-<p>2Do displays all tasks</p>
+<p>System displays all tasks</p>
 </li>
 </ol>
 </div>
@@ -1144,13 +1267,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2a1. 2Do displays a â€œNo task to displayâ€� message</p>
+<p>2a1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-find-task" class="discrete">Use case: Find task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1161,7 +1285,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to find a task using a keyword</p>
 </li>
 <li>
-<p>2Do displays all relevant tasks</p>
+<p>System displays all relevant tasks</p>
 </li>
 </ol>
 </div>
@@ -1177,7 +1301,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1190,13 +1314,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-undo-last-action" class="discrete">Use case: Undo last action</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1207,7 +1332,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to undo the last action</p>
 </li>
 <li>
-<p>2Do undos the last action and returns the to-do list to its previous state</p>
+<p>System undos the last action and returns the to-do list to its previous state</p>
 </li>
 </ol>
 </div>
@@ -1223,13 +1348,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2a1. 2Do displays an error message</p>
+<p>2a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-edit-task" class="discrete">Use case: Edit task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1240,13 +1366,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User searches for a task using <strong>list</strong> or <strong>find</strong></p>
 </li>
 <li>
-<p>2Do displays all relevant tasks</p>
+<p>System displays all relevant tasks</p>
 </li>
 <li>
 <p>User requests to edit the task by using its <a href="#index">index</a></p>
 </li>
 <li>
-<p>2Do updates the task and shows a success message</p>
+<p>System updates the task and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1262,7 +1388,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1275,7 +1401,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1288,13 +1414,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3a1. 2Do displays an error message</p>
+<p>3a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 2</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-mark-task-as-complete" class="discrete">Use case: Mark task as complete</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1305,13 +1432,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User searches for a task using <strong>list</strong> or <strong>find</strong></p>
 </li>
 <li>
-<p>2Do displays all relevant tasks</p>
+<p>System displays all relevant tasks</p>
 </li>
 <li>
 <p>User requests to mark the task as complete by using its index</p>
 </li>
 <li>
-<p>2Do updates the task and shows a success message</p>
+<p>System updates the task and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1327,7 +1454,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1340,7 +1467,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1353,7 +1480,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3a1. 2Do displays an error message</p>
+<p>3a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 2</p>
@@ -1366,13 +1493,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3b1. 2Do displays an error message</p>
+<p>3b1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-mark-task-as-incomplete" class="discrete">Use case: Mark task as incomplete</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1383,13 +1511,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User searches for a completed task using <strong>list -h</strong> or <strong>find -h</strong></p>
 </li>
 <li>
-<p>2Do displays all relevant tasks</p>
+<p>System displays all relevant tasks</p>
 </li>
 <li>
 <p>User requests to mark the task as incomplete by using its index</p>
 </li>
 <li>
-<p>2Do updates the task and shows a success message</p>
+<p>System updates the task and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1405,7 +1533,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1418,7 +1546,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2b1. 2Do displays a â€œNo task to displayâ€� message</p>
+<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1431,7 +1559,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3a1. 2Do displays an error message</p>
+<p>3a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 2</p>
@@ -1444,13 +1572,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3b1. 2Do displays an error message</p>
+<p>3b1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-display-help-guide" class="discrete">Use case: Display help guide</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1461,7 +1590,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests for help guide</p>
 </li>
 <li>
-<p>2Do displays help guide</p>
+<p>System displays help guide</p>
 </li>
 </ol>
 </div>
@@ -1477,13 +1606,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-display-options" class="discrete">Use case: Display options</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1491,16 +1621,16 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view the general options available on 2Do</p>
+<p>User requests to view the general options available on system</p>
 </li>
 <li>
-<p>2Do displays its general options</p>
+<p>System displays its general options</p>
 </li>
 <li>
 <p>User requests to change the general options</p>
 </li>
 <li>
-<p>2Do updates its general options</p>
+<p>System updates its general options</p>
 </li>
 </ol>
 </div>
@@ -1516,13 +1646,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>3a1. 2Do displays an error message</p>
+<p>3a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-save-to-do-list" class="discrete">Use case: Save to-do list</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1533,7 +1664,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to save the to-do list</p>
 </li>
 <li>
-<p>2Do saves the current to-do list and exports it as a text file in the directory specified</p>
+<p>System saves the current to-do list and exports it as a text file in the directory specified</p>
 </li>
 </ol>
 </div>
@@ -1549,13 +1680,14 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
 </blockquote>
 </div>
+<hr>
 <h3 id="use-case-clear-to-do-list" class="discrete">Use case: Clear to-do list</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1566,13 +1698,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to clear the to-do list</p>
 </li>
 <li>
-<p>2Do prompts the user to confirm the clear request</p>
+<p>System prompts the user to confirm the clear request</p>
 </li>
 <li>
 <p>User confirms the clear request</p>
 </li>
 <li>
-<p>2Do clears the to-do list and shows a success message</p>
+<p>System clears the to-do list and shows a success message</p>
 </li>
 </ol>
 </div>
@@ -1588,7 +1720,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1a1. 2Do displays an error message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1605,17 +1737,18 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </blockquote>
 </div>
-<h3 id="use-case-quit-2do" class="discrete">Use case: Quit 2Do</h3>
+<hr>
+<h3 id="use-case-quit-system" class="discrete">Use case: Quit system</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to quit 2Do</p>
+<p>User requests to quit system</p>
 </li>
 <li>
-<p>2Do shuts down</p>
+<p>System shuts down</p>
 </li>
 </ol>
 </div>
@@ -1676,7 +1809,27 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Task without a fixed deadline</p>
+<p>Task without an end time</p>
+</div>
+</blockquote>
+</div>
+<div id="task-with-deadline" class="paragraph">
+<p>Task with deadline</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Task with an end time and without a start time</p>
+</div>
+</blockquote>
+</div>
+<div id="event" class="paragraph">
+<p>Event</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Task with a start time and an end time</p>
 </div>
 </blockquote>
 </div>
@@ -1747,10 +1900,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>User friendly commands</p>
+<p>User friendly commands, through simply filling its short and simple forms to handle tasks</p>
 </li>
 <li>
-<p>Simple interface that makes it easy to navigate around</p>
+<p>Simple interface makes it easy to navigate around</p>
 </li>
 <li>
 <p>Calendar interface allows the user to easily find empty slots to schedule tasks</p>
@@ -1759,7 +1912,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>Calendar can be viewed in a year, month, day or agenda format</p>
 </li>
 <li>
-<p>Import and view other peopleâ€™s calendars for better collaboration</p>
+<p>Import and view other people&#8217;s calendars for better collaboration</p>
 </li>
 <li>
 <p>Reminders can be set to a task</p>
@@ -1782,6 +1935,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
+<hr>
 <div class="paragraph">
 <p><strong>Todoist</strong></p>
 </div>
@@ -1794,13 +1948,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>Features are easy to understand and use</p>
+<p>Features are intuitive as users simply need to fill in the short and simple forms provided to handle their tasks</p>
 </li>
 <li>
 <p>Different categories are available to separate different kinds of tasks</p>
 </li>
 <li>
-<p>Each category allows a weekly and daily view of its tasks</p>
+<p>Each category allows a daily and weekly view of its tasks</p>
 </li>
 <li>
 <p><a href="#recurring-task">Recurring tasks</a> can be added</p>
@@ -1832,6 +1986,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
+<hr>
 <div class="paragraph">
 <p><strong>Trello</strong></p>
 </div>
@@ -1869,10 +2024,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>Features are not intuitive and requires reference to a guide to learn</p>
+<p>Adding a task is not intuitive as its respective form is cluttered with additional features that makes it difficult to know which fields are mandatory</p>
 </li>
 <li>
-<p>Troublesome to setup the calendar</p>
+<p>Setting up the calendar is dependent on another calendar application (e.g. <em>Google Calendar</em>) as it supports calendar import by other applications but lacks its own native calendar</p>
 </li>
 <li>
 <p><a href="#recurring-task">Recurring tasks</a> cannot be added</p>
@@ -1885,6 +2040,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
+<hr>
 <div class="paragraph">
 <p><strong>Wunderlist</strong></p>
 </div>
@@ -1897,10 +2053,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>User friendly interface</p>
+<p>Short and simple forms are used to allow easy handling of tasks</p>
 </li>
 <li>
-<p>Various backgrounds to suit the user&#8217;s preferences</p>
+<p>Straightforward and uncluttered interface makes it easy for navigation</p>
+</li>
+<li>
+<p>Various backgrounds are available to suit the user&#8217;s preferences</p>
 </li>
 <li>
 <p>Sort uncompleted tasks in various ways</p>
@@ -1940,7 +2099,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-16 09:54:43 +00:00
+Last updated 2017-07-17 02:17:10 +00:00
 </div>
 </div>
 </body>
