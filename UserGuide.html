@@ -622,136 +622,82 @@ Example: <code>quit</code></p>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-center valign-top">Command</th>
+<th class="tableblock halign-center valign-top">Main Format</th>
+<th class="tableblock halign-center valign-top">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Main Format</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">help / -h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">help [name of command]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>help add</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add / -a /+</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days r/yearly u/true</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help / -h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">delete / del / -d / -</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">delete [-h] {index}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>delete 1</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help [name of command]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">list / -l</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">list [-h] s/[start] e/[end]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>list s/today</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help add</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">find / -f</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">find [-h] {keyword}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>find work</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add / -a /+</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">undo / -u</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">undo</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>undo</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">edit / -e</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">edit [-h] {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm] r/[recurrence] u/[urgent]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1430 d/Special Term t/NUS a/2 days u/true</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days r/yearly u/true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">mark / -m</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">mark {index}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>mark 4</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete / del / -d / -</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">unmark / -un</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">unmark {index}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>unmark 4</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete [-h] {index}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">option (In-development)/ -o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">option a/[alarm] m/ [mark completion automatically]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>option a/1 minute m/true</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete 1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">save / -s</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">save [-h] [directory]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>save C:\Program Files\Common Files\2Do.txt</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list / -l</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clear / -c</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">clear [-h]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>clear</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list [-h] s/[start] e/[end]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list s/today</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find / -f</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find [-h] {keyword}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find work</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo / -u</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit / -e</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit [-h] {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm] r/[recurrence] u/[urgent]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1430 d/Special Term t/NUS a/2 days u/true</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark / -m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark {index}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unmark / -un</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unmark {index}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unmark 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">option (In-development)/ -o</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">option a/[alarm] m/ [mark completion automatically]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">option a/1 minute m/true</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save / -s</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save [-h] [directory]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save C:\Program Files\Common Files\2Do.txt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear / -c</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear [-h]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">exit / quit / -q</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">quit</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">quit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">exit / quit / -q</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">quit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>quit</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -760,7 +706,7 @@ Example: <code>quit</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-17 12:10:56 +00:00
+Last updated 2017-07-17 13:26:24 +00:00
 </div>
 </div>
 </body>
