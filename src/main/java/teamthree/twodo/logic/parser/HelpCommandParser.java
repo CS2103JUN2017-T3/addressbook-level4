@@ -29,7 +29,7 @@ public class HelpCommandParser {
         case DeleteCommand.COMMAND_WORD:
         case DeleteCommand.COMMAND_WORD_QUICK:
         case DeleteCommand.COMMAND_WORD_SHORT:
-        case DeleteCommand.COMMAND_WORD_UNIXSTYLE:
+        case DeleteCommand.COMMAND_WORD_FAST:
             return new HelpCommand(DeleteCommand.MESSAGE_USAGE);
         case ListCommand.COMMAND_WORD:
         case ListCommand.COMMAND_WORD_UNIXSTYLE:

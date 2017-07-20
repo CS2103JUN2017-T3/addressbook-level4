@@ -10,8 +10,10 @@ import com.google.common.eventbus.Subscribe;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import teamthree.twodo.commons.core.ComponentManager;
+import teamthree.twodo.commons.core.EventsCenter;
 import teamthree.twodo.commons.core.UnmodifiableObservableList;
 import teamthree.twodo.commons.core.index.Index;
+import teamthree.twodo.commons.events.model.DeleteCategoryEvent;
 import teamthree.twodo.commons.events.model.TaskBookChangedEvent;
 import teamthree.twodo.commons.exceptions.IllegalValueException;
 import teamthree.twodo.model.Model;
@@ -27,6 +29,7 @@ import teamthree.twodo.model.task.TaskWithDeadline;
 public class CategoryManager extends ComponentManager {
     public static final Index INDEX_LAST_DEFAULT = Index.fromOneBased(5);
     private final Model model;
+
     /**
      * ==============DEFAULT CATEGORIES=======================
      */
@@ -201,7 +204,9 @@ public class CategoryManager extends ComponentManager {
         private Tag deleteCategory(Index targetIndex) throws IllegalValueException {
             //Get category to delete from last shown list
             Tag toDel = new Tag(categoryList.get(targetIndex.getZeroBased()).getName());
+            String tagName = categoryList.get(targetIndex.getZeroBased()).getName();
             ArrayList<Task> tasksUnderCategory = categoryMap.get(toDel);
+            EventsCenter.getInstance().post(new DeleteCategoryEvent(tasksUnderCategory, tagName));
             tasksUnderCategory.forEach((task) -> {
                 Task editedTask = task;
                 HashSet<Tag> tags = new HashSet<Tag>(task.getTags());

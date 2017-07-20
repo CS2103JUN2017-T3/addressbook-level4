@@ -67,7 +67,7 @@ public class Parser {
             return new EditCommandParser().parse(arguments);
 
         case DeleteCommand.COMMAND_WORD_QUICK:
-        case DeleteCommand.COMMAND_WORD_UNIXSTYLE:
+        case DeleteCommand.COMMAND_WORD_FAST:
         case DeleteCommand.COMMAND_WORD_SHORT:
         case DeleteCommand.COMMAND_WORD:
             return new DeleteCommandParser().parse(arguments);

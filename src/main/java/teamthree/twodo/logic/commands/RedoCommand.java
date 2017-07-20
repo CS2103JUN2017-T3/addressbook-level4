@@ -47,7 +47,7 @@ public class RedoCommand extends Command {
 
         case DeleteCommand.COMMAND_WORD:
         case DeleteCommand.COMMAND_WORD_QUICK:
-        case DeleteCommand.COMMAND_WORD_UNIXSTYLE:
+        case DeleteCommand.COMMAND_WORD_FAST:
         case DeleteCommand.COMMAND_WORD_SHORT:
             ReadOnlyTask taskToDelete = undoHistory.getAddHistory().pop();
             history.addToDeleteHistory(taskToDelete);
