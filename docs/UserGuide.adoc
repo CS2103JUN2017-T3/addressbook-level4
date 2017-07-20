@@ -63,18 +63,11 @@ Dates
 ****
 
 Time
-
 ****
-* Format: 24HR
+* Format 1: 24HR +
 `Example: 1759`
-****
-
-Reccurence
-****
-* Format 1: days / weeks / months / years +
-`Example: 4 days`
-* Format 2: keywords +
-`Example: daily / weekly / yearly / annually`
+* Format 2: AM/PM +
+`Example: 0430am or 10am`
 ****
 
 ====
@@ -93,8 +86,8 @@ Example: `help add`
 
 ==== General
 
-Format 1: `add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,...] a/[alarm] r/[recurrence] u/[urgent]` +
-Example: `add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/Reunion a/2 days r/yearly u/true`
+Format 1: `add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,...] a/[alarm]` +
+Example: `add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/Reunion a/2 days`
 ****
 * Creates a task with provided attributes and adds it to your list
 * _start_ and _end_ are in the format {date} {time}
@@ -133,20 +126,30 @@ Example: `add n/CS2103 final exams s/28/07/17 1430 e/28/07/17 1630 d/Pray hard t
 * Events can be added with the _start_ and _end_ fields filled
 ****
 
-==== Recurring tasks
+==== Tags
 
-Format: `add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,...] a/[alarm] r/{recurrence} u/[urgent]` +
-Example: `add n/CS2103 monday pre-tutorial meeting s/10/07/17 1200 e/10/07/17 1500 d/For project t/NUS a/1 day r/weekly u/true`
+Format: `add tag {tag name} {indices of the tasks to include under the tag}` +
+Example: `add tag NUS 1,2,3,8`
 ****
-* Recurring tasks can be added with the _end_ and _recurrence_ fields filled
+* The _indices_ must be comma-separated
 ****
 
 === Deleting a task : `delete / del / -d / -`
+
+==== General
 
 Format: `delete [-h] {index}` +
 Example: `delete 1`
 ****
 * Deletes task at that index (positive number) in the most recent call of list
+****
+
+==== Tags
+
+Format: `del tag {index of tag in tag list}` +
+Example: `del tag 7`
+****
+* Deleting of default tags is not allowed
 ****
 
 === Listing all tasks : `list / -l`
@@ -273,9 +276,13 @@ Example: `quit`
 
 |help / -h |help [name of command] |`help add`
 
-|add / -a /+ |add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,...] a/[alarm] r/[recurrence] u/[urgent] |`add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days r/yearly u/true`
+|add /+ |add [-h] n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,...] a/[alarm] |`add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days`
+
+|add tag /+ tag |add tag {tag name} {indices of the tasks to include under the tag} |`add tag NUS 1,2,3,8`
 
 |delete / del / -d / - |delete [-h] {index} |`delete 1`
+
+|delete tag / del tag / - tag |del tag {index of tag in tag list} |`del tag 7`
 
 |list / -l |list [-h] s/[start] e/[end] |`list s/today`
 
