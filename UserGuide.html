@@ -108,7 +108,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>add projectX</code></strong> : adds a task with <strong>projectX</strong> as its name</p>
 </li>
 <li>
-<p><strong><code>list</code></strong> : lists all tasks</p>
+<p><strong><code>list</code></strong> : lists all incomplete tasks</p>
 </li>
 <li>
 <p><strong><code>delete 2</code></strong> : deletes the 2nd task shown in the current list</p>
@@ -186,27 +186,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Format: 24HR
+<p>Format 1: 24HR<br>
 <code>Example: 1759</code></p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Reccurence</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
 <li>
-<p>Format 1: days / weeks / months / years<br>
-<code>Example: 4 days</code></p>
-</li>
-<li>
-<p>Format 2: keywords<br>
-<code>Example: daily / weekly / yearly / annually</code></p>
+<p>Format 2: natural language<br>
+<code>Example: 10am</code></p>
 </li>
 </ul>
 </div>
@@ -258,9 +243,6 @@ Example: `add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/
 </li>
 <li>
 <p><em>alarm</em> sets an notification to appear at the specified date</p>
-</li>
-<li>
-<p><code>u/true</code> can be added to indicate a task is urgent</p>
 </li>
 </ul>
 </div>
@@ -343,24 +325,24 @@ Example: <code>delete 1</code></p>
 <div class="sect2">
 <h3 id="listing-all-tasks-code-list-l-code"><a class="link" href="#listing-all-tasks-code-list-l-code">2.4. Listing all tasks : <code>list / l</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>list [/h] s/[start] e/[end]</code><br>
-Example: <code>list s/05/03/17</code></p>
+<p>Format: <code>list [/h] [/f] s/[start] e/[end] t/[tag1, tag2,&#8230;&#8203;]</code><br>
+Example: <code>list s/05/03/17 1200 t/project t/personal</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>[/h] represents completed tasks</p>
+<p>Lists all incomplete tasks if no additional arguments</p>
 </li>
 <li>
-<p>Lists completed tasks</p>
+<p>Lists uincomplete tasks according to dates and/or tags provided</p>
 </li>
 <li>
-<p>Lists all uncompleted events and tasks with deadline if no additional arguments</p>
+<p>Adding /h lists completed tasks instead of incomplete tasks</p>
 </li>
 <li>
-<p>Lists uncompleted tasks according to dates provided</p>
+<p>Adding /f lists only floating tasks instead of all tasks</p>
 </li>
 </ul>
 </div>
@@ -379,6 +361,9 @@ Example: <code>find work</code></p>
 <ul>
 <li>
 <p>Scans through all tasks to find for keyword in any attribute and list it</p>
+</li>
+<li>
+<p>Adding /h lists completed tasks instead of incomplete tasks</p>
 </li>
 </ul>
 </div>
@@ -665,8 +650,8 @@ Example: <code>quit</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">list / l</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">list [/h] s/[start] e/[end]</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>list s/today</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">list [/h] [/f] s/[start] e/[end] t/[tag1, tag2,&#8230;&#8203;]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>list s/today 10am</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">find / f</p></td>
@@ -685,7 +670,7 @@ Example: <code>quit</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">edit / e</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">edit {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm] r/[recurrence] u/[urgent]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">edit {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm]</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">`edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1430 d/Special Term t/NUS a/2 days `</p></td>
 </tr>
 <tr>
@@ -730,7 +715,7 @@ Example: <code>quit</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-22 17:26:38 +00:00
+Last updated 2017-07-22 19:40:13 +00:00
 </div>
 </div>
 </body>
