@@ -54,7 +54,7 @@
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="600">
+<img src="images/docs/images/MockUI.png" alt="MockUI" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -88,7 +88,7 @@ This app will not work with earlier versions of Java 8.
 <p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 </li>
 <li>
-<p>When the application starts up, tasks due within a certain amount of time (the default is 7 days) will be displayed.</p>
+<p>When the application starts up, tasks due within a certain amount of time (the default is 1 day) will be displayed.</p>
 </li>
 <li>
 <p>To interact with the task manager, open the main application.</p>
@@ -105,7 +105,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>add projectX</code></strong> : adds a task with <strong>projectX</strong> as its name</p>
+<p><strong><code>add n/projectX</code></strong> : adds a task with <strong>projectX</strong> as its name</p>
 </li>
 <li>
 <p><strong><code>list</code></strong> : lists all incomplete tasks</p>
@@ -148,8 +148,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>[]: Optional argument</p>
 </li>
 <li>
-<p>[-h]: <em>[-h]</em> could be added behind the command word to operate the command on the to-do list history(completed tasks) <br>
-<code>Example: find [-h] 050517</code></p>
+<p>[/h]: <em>[/h]</em> could be added behind <em>[/list]</em> and <em>[/find]</em> command words to operate the commands on the completed task list(history) <br>
+<code>Example: find [/h] project</code></p>
+</li>
+<li>
+<p>[/f]: <em>[/f]</em> could be added behind the <em>[/list]</em> command word to operate the command on the floating task list(tasks without deadlines)<br>
+<code>Example: list [/f]</code></p>
 </li>
 </ul>
 </div>
@@ -187,11 +191,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <ul>
 <li>
 <p>Format 1: 24HR<br>
-<code>Example: 1759</code></p>
+<code>Example: 1800</code></p>
 </li>
 <li>
 <p>Format 2: natural language<br>
-<code>Example: 10am</code></p>
+<code>Example: 6pm</code></p>
 </li>
 </ul>
 </div>
@@ -253,7 +257,7 @@ Example: `add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/
 <h4 id="floating-tasks"><a class="link" href="#floating-tasks">2.2.2. Floating tasks</a></h4>
 <div class="paragraph">
 <p>Format: <code>add n/{name} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]]</code><br>
-Example: <code>add n/Complain about CS2103 d/To destress t/NUS a/15/07/17 1200 u/false</code></p>
+Example: <code>add n/Complain about CS2103 d/To destress t/NUS a/15/07/17 1200</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -278,7 +282,7 @@ Example: `add n/Complete CS2103 V0.2 e/10/07/17 1000 d/Ensure project is at leas
 <div class="ulist">
 <ul>
 <li>
-<p>Tasks with deadlines can be added with the <em>end</em> field filled and the <em>start</em> field empty</p>
+<p>Tasks with deadlines can be added with only the <em>end</em> field included</p>
 </li>
 </ul>
 </div>
@@ -484,7 +488,7 @@ Example: <code>option a/1 minute m/true</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Default setting is 7 days</p>
+<p>Default setting is 1 days</p>
 </li>
 <li>
 <p>Range for reminders: 1 minute to 7 days</p>
@@ -640,7 +644,7 @@ Example: <code>quit</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">add / a /+</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">add n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] r/[recurrence] u/[urgent]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">`add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days `</p></td>
 </tr>
 <tr>
@@ -715,7 +719,7 @@ Example: <code>quit</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-23 09:03:11 +00:00
+Last updated 2017-07-23 10:35:55 +00:00
 </div>
 </div>
 </body>
