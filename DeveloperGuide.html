@@ -28,7 +28,7 @@
 <ul class="sectlevel2">
 <li><a href="#prerequisites">1.1. Prerequisites</a></li>
 <li><a href="#importing-the-project-into-eclipse">1.2. Importing the project into Eclipse</a></li>
-<li><a href="#configuring-checkstyle">1.3. Configuring Checkstyle</a></li>
+<li><a href="#configuring-checkstyle">1.3. Configuring checkstyle</a></li>
 <li><a href="#troubleshooting-project-setup">1.4. Troubleshooting project setup</a></li>
 <li><a href="#updating-documentation">1.5. Updating documentation</a></li>
 <li><a href="#coding-style">1.6. Coding style</a></li>
@@ -149,7 +149,7 @@ This app will not work with earlier versions of Java 8.
 <p>If you are asked whether to 'keep' or 'overwrite' config files, choose to 'keep'.</p>
 </li>
 <li>
-<p>Depending on your connection speed and server load, it can even take up to 30 minutes for the set up to finish (This is because Gradle downloads library files from servers during the project set up process).</p>
+<p>Depending on your connection speed and server load, it can even take up to 30 minutes for the set up to finish (This is because <em>Gradle</em> downloads library files from servers during the project set up process).</p>
 </li>
 <li>
 <p>If Eclipse auto-changed any settings files during the import process, you can discard those changes.</p>
@@ -162,7 +162,7 @@ This app will not work with earlier versions of Java 8.
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuring-checkstyle"><a class="link" href="#configuring-checkstyle">1.3. Configuring Checkstyle</a></h3>
+<h3 id="configuring-checkstyle"><a class="link" href="#configuring-checkstyle">1.3. Configuring checkstyle</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -172,7 +172,7 @@ This app will not work with earlier versions of Java 8.
 <p>Choose <code>External Configuration File</code> under <code>Type</code></p>
 </li>
 <li>
-<p>Enter an arbitrary configuration name e.g. 2Do</p>
+<p>Enter an arbitrary configuration name e.g. <em>2Do</em></p>
 </li>
 <li>
 <p>Import checkstyle configuration file found at <code>config/checkstyle/checkstyle.xml</code></p>
@@ -258,7 +258,7 @@ Click on the <code>files from packages</code> text after ticking in order to ena
 <p><em>Figure 2.1.1 : Architecture Diagram</em></p>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of 2Do. Given below is a quick overview of each component.</p>
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of <em>2Do</em>. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -294,7 +294,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
 </li>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to 2Do&#8217;s log file.</p>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to <em>2Do</em>'s log file.</p>
 </li>
 </ul>
 </div>
@@ -304,13 +304,13 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The UI of the 2Do.</p>
+<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The user interface of <em>2Do</em>.</p>
 </li>
 <li>
 <p><a href="#logic-component"><strong><code>Logic</code></strong></a> : The command executor.</p>
 </li>
 <li>
-<p><a href="#model-component"><strong><code>Model</code></strong></a> : Holds the data of 2Do in-memory.</p>
+<p><a href="#model-component"><strong><code>Model</code></strong></a> : Holds the data of <em>2Do</em> in-memory.</p>
 </li>
 <li>
 <p><a href="#storage-component"><strong><code>Storage</code></strong></a> : Reads data from, and writes data to, the hard disk.</p>
@@ -556,7 +556,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </ul>
 </div>
 <div class="paragraph">
-<p>2Do allow users to save their data at a new filepath(File Directory must be available). The filepath can be specified via the Save command and will contain a new 2Do.xml document. StorageMananger will set the new filepath and save it into Config. 2Do will load from and save to the new filepath for current and future sessions until a new filepath is specified. 2Do also allows users to load a TaskList file from previous sessions vias the Load command.</p>
+<p><em>2Do</em> allows users to save their data at a new filepath(File Directory must be available). The filepath can be specified via the Save command and will contain a new <em>2Do.xml document</em>. StorageMananger will set the new filepath and save it into Config. <em>2Do</em> will load from and save to the new filepath for current and future sessions until a new filepath is specified. <em>2Do</em> also allows users to load a TaskList file from previous sessions vias the Load command.</p>
 </div>
 </div>
 <div class="sect2">
@@ -641,7 +641,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="ulist">
 <ul>
 <li>
-<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> for how to run tests using Gradle.</p>
+<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> for how to run tests using <em>Gradle</em>.</p>
 </li>
 </ul>
 </div>
@@ -704,7 +704,7 @@ e.g. <code>teamthree.twodo.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="build-automation"><a class="link" href="#build-automation">5.1. Build Automation</a></h3>
 <div class="paragraph">
-<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
+<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use <em>Gradle</em> for build automation.</p>
 </div>
 </div>
 <div class="sect2">
@@ -774,8 +774,8 @@ e.g. <code>teamthree.twodo.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">5.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, 2Do depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
-a. Include those libraries in the repo (this bloats the repo size)<br>
+<p>A project often depends on third-party libraries. For example, <em>2Do</em> depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing and the <a href="http://www.ocpsoft.org/prettytime">PrettyTime library</a> for natural language handling. Managing these dependencies can be automated using <em>Gradle</em>. <em>Gradle</em> can download the dependencies automatically, which is better than these alternatives:<br>
+a. Including those libraries in the repository (this bloats the repository size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
 </div>
@@ -807,7 +807,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">refer to instructions when I forget how to use 2Do</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">refer to instructions when I forget how to use <em>2Do</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1192,6 +1192,40 @@ b. Require developers to download those libraries manually (this creates extra w
 </blockquote>
 </div>
 <hr>
+<h3 id="use-case-add-a-tag" class="discrete">Use case: Add a tag</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a tag</p>
+</li>
+<li>
+<p>System adds the tag and displays a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<hr>
 <h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1241,6 +1275,40 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 2</p>
+</div>
+</blockquote>
+</div>
+<hr>
+<h3 id="use-case-delete-a-tag" class="discrete">Use case: Delete a tag</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a tag</p>
+</li>
+<li>
+<p>System deletes the tag and displays a success message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
 </div>
 </blockquote>
 </div>
@@ -1334,6 +1402,19 @@ b. Require developers to download those libraries manually (this creates extra w
 <p><strong>Extensions</strong></p>
 </div>
 <div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
 <p>2a. No actions were done previously</p>
 </div>
 <div class="quoteblock">
@@ -1366,6 +1447,19 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>2a. The last action was not an undo command</p>
@@ -2111,7 +2205,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-24 04:45:52 +00:00
+Last updated 2017-07-24 07:12:14 +00:00
 </div>
 </div>
 </body>

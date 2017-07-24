@@ -29,19 +29,21 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-help">2.1. Viewing help : `help `</a></li>
 <li><a href="#adding-a-task-code-add-a-code">2.2. Adding a task : <code>add / a / +</code></a></li>
-<li><a href="#deleting-a-task-code-delete-del-d-code">2.3. Deleting a task : <code>delete / del / d / -</code></a></li>
-<li><a href="#listing-all-tasks-code-list-l-code">2.4. Listing all tasks : <code>list / l</code></a></li>
-<li><a href="#finding-a-task-code-find-f-code">2.5. Finding a task : <code>find / f</code></a></li>
-<li><a href="#undoing-the-last-action-code-undo-u-code">2.6. Undoing the last action : <code>undo / u</code></a></li>
-<li><a href="#redoing-the-undone-action-code-redo-r-code">2.7. Redoing the undone action : <code>redo / r</code></a></li>
-<li><a href="#editing-a-task-code-edit-e-code">2.8. Editing a task : <code>edit / e</code></a></li>
-<li><a href="#marking-a-task-as-complete-code-mark-m-code">2.9. Marking a task as complete : <code>mark / m</code></a></li>
-<li><a href="#marking-a-task-as-incomplete-code-unmark-un-code">2.10. Marking a task as incomplete : <code>unmark / un</code></a></li>
-<li><a href="#editing-the-default-options-code-option-o-code">2.11. Editing the default options : <code>option / o</code></a></li>
-<li><a href="#save-command">2.12. Saving list : <code>save / s</code></a></li>
-<li><a href="#loading-list-code-load-code">2.13. Loading list : <code>load</code></a></li>
-<li><a href="#clearing-list-code-clear-c-code">2.14. Clearing list : <code>clear / c</code></a></li>
-<li><a href="#quitting-2do-code-exit-quit-q-code">2.15. Quitting 2Do : <code>exit / quit / q</code></a></li>
+<li><a href="#adding-a-tag-code-add-tag-a-tag-tag-code">2.3. Adding a tag : <code>add tag / a tag / + tag</code></a></li>
+<li><a href="#deleting-a-task-code-delete-del-d-code">2.4. Deleting a task : <code>delete / del / d / -</code></a></li>
+<li><a href="#deleting-a-tag-code-delete-tag-del-tag-d-tag-tag-code">2.5. Deleting a tag : <code>delete tag / del tag / d tag / - tag</code></a></li>
+<li><a href="#listing-all-tasks-code-list-l-code">2.6. Listing all tasks : <code>list / l</code></a></li>
+<li><a href="#finding-a-task-code-find-f-code">2.7. Finding a task : <code>find / f</code></a></li>
+<li><a href="#undoing-the-last-action-code-undo-u-code">2.8. Undoing the last action : <code>undo / u</code></a></li>
+<li><a href="#redoing-the-undone-action-code-redo-r-code">2.9. Redoing the undone action : <code>redo / r</code></a></li>
+<li><a href="#editing-a-task-code-edit-e-code">2.10. Editing a task : <code>edit / e</code></a></li>
+<li><a href="#marking-a-task-as-complete-code-mark-m-code">2.11. Marking a task as complete : <code>mark / m</code></a></li>
+<li><a href="#marking-a-task-as-incomplete-code-unmark-un-code">2.12. Marking a task as incomplete : <code>unmark / un</code></a></li>
+<li><a href="#editing-the-default-options-code-option-o-code">2.13. Editing the default options : <code>option / o</code></a></li>
+<li><a href="#save-command">2.14. Saving list : <code>save / s</code></a></li>
+<li><a href="#loading-list-code-load-code">2.15. Loading list : <code>load</code></a></li>
+<li><a href="#clearing-list-code-clear-c-code">2.16. Clearing list : <code>clear / c</code></a></li>
+<li><a href="#quitting-2do-code-exit-quit-q-code">2.17. Quitting 2Do : <code>exit / quit / q</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">3. FAQ</a></li>
@@ -54,11 +56,11 @@
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/docs/images/MockUI.png" alt="MockUI" width="600">
+<img src="images/MainScreen.png" alt="MainScreen" width="600">
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.1 : Sample GUI with pre-loaded tasks</em></p>
+<p><em>Figure 2.1.1 : GUI with pre-loaded tasks</em></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -232,8 +234,8 @@ Example: <code>help add</code></p>
 <div class="sect3">
 <h4 id="general"><a class="link" href="#general">2.2.1. General</a></h4>
 <div class="paragraph">
-<p>Format 1: <code>add n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] `<br>
-Example: `add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/Reunion a/2 days</code></p>
+<p>Format 1: <code>add n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]</code><br>
+Example: <code>add n/CS2103 Meetup s/03/05/17 1200 e/03/05/17 1400 d/Reunion lunch t/Reunion a/2 days</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -274,8 +276,8 @@ Example: <code>add n/Complain about CS2103 d/To destress t/NUS a/15/07/17 1200</
 <div class="sect3">
 <h4 id="tasks-with-deadlines"><a class="link" href="#tasks-with-deadlines">2.2.3. Tasks with deadlines</a></h4>
 <div class="paragraph">
-<p>Format: <code>add n/{name} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] `<br>
-Example: `add n/Complete CS2103 V0.2 e/10/07/17 1000 d/Ensure project is at least a minimum viable product t/NUS a/2 days r/false u/true</code></p>
+<p>Format: <code>add n/{name} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]</code><br>
+Example: <code>add n/Complete CS2103 V0.2 e/10/07/17 1000 d/Ensure project is at least a minimum viable product t/NUS a/2 days</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -292,8 +294,8 @@ Example: `add n/Complete CS2103 V0.2 e/10/07/17 1000 d/Ensure project is at leas
 <div class="sect3">
 <h4 id="events"><a class="link" href="#events">2.2.4. Events</a></h4>
 <div class="paragraph">
-<p>Format: `add n/{name} s/{start} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm] `<br>
-Example: `add n/CS2103 final exams s/28/07/17 1430 e/28/07/17 1630 d/Pray hard t/NUS a/2 days `</p>
+<p>Format: <code>add n/{name} s/{start} e/{end} d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]</code><br>
+Example: <code>add n/CS2103 final exams s/28/07/17 1430 e/28/07/17 1630 d/Pray hard t/NUS a/2 days</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -309,7 +311,27 @@ Example: `add n/CS2103 final exams s/28/07/17 1430 e/28/07/17 1630 d/Pray hard t
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-task-code-delete-del-d-code"><a class="link" href="#deleting-a-task-code-delete-del-d-code">2.3. Deleting a task : <code>delete / del / d / -</code></a></h3>
+<h3 id="adding-a-tag-code-add-tag-a-tag-tag-code"><a class="link" href="#adding-a-tag-code-add-tag-a-tag-tag-code">2.3. Adding a tag : <code>add tag / a tag / + tag</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>add tag {tag name} {indices of the tasks to include under the tag}</code><br>
+Example: <code>add tag NUS 1,2,3,8</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <em>indices</em> must be comma-separated</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-task-code-delete-del-d-code"><a class="link" href="#deleting-a-task-code-delete-del-d-code">2.4. Deleting a task : <code>delete / del / d / -</code></a></h3>
+<div class="sect3">
+<h4 id="general-2"><a class="link" href="#general-2">2.4.1. General</a></h4>
 <div class="paragraph">
 <p>Format: <code>delete {index}</code><br>
 Example: <code>delete 1</code></p>
@@ -326,8 +348,27 @@ Example: <code>delete 1</code></p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="listing-all-tasks-code-list-l-code"><a class="link" href="#listing-all-tasks-code-list-l-code">2.4. Listing all tasks : <code>list / l</code></a></h3>
+<h3 id="deleting-a-tag-code-delete-tag-del-tag-d-tag-tag-code"><a class="link" href="#deleting-a-tag-code-delete-tag-del-tag-d-tag-tag-code">2.5. Deleting a tag : <code>delete tag / del tag / d tag / - tag</code></a></h3>
+<div class="paragraph">
+<p>Format: <code>delete tag {index of tag in tag list}</code><br>
+Example: <code>delete tag 7</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletion of default tags is not allowed</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-tasks-code-list-l-code"><a class="link" href="#listing-all-tasks-code-list-l-code">2.6. Listing all tasks : <code>list / l</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>list [/h] [/f] s/[start] e/[end] t/[tag1, tag2,&#8230;&#8203;]</code><br>
 Example: <code>list s/05/03/17 1200 t/project t/personal</code></p>
@@ -354,7 +395,7 @@ Example: <code>list s/05/03/17 1200 t/project t/personal</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-a-task-code-find-f-code"><a class="link" href="#finding-a-task-code-find-f-code">2.5. Finding a task : <code>find / f</code></a></h3>
+<h3 id="finding-a-task-code-find-f-code"><a class="link" href="#finding-a-task-code-find-f-code">2.7. Finding a task : <code>find / f</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>find [/h] {keyword}</code><br>
 Example: <code>find work</code></p>
@@ -375,7 +416,7 @@ Example: <code>find work</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-the-last-action-code-undo-u-code"><a class="link" href="#undoing-the-last-action-code-undo-u-code">2.6. Undoing the last action : <code>undo / u</code></a></h3>
+<h3 id="undoing-the-last-action-code-undo-u-code"><a class="link" href="#undoing-the-last-action-code-undo-u-code">2.8. Undoing the last action : <code>undo / u</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>undo</code><br>
 Example: <code>undo</code></p>
@@ -393,7 +434,7 @@ Example: <code>undo</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-undone-action-code-redo-r-code"><a class="link" href="#redoing-the-undone-action-code-redo-r-code">2.7. Redoing the undone action : <code>redo / r</code></a></h3>
+<h3 id="redoing-the-undone-action-code-redo-r-code"><a class="link" href="#redoing-the-undone-action-code-redo-r-code">2.9. Redoing the undone action : <code>redo / r</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>redo</code><br>
 Example: <code>redo</code></p>
@@ -411,7 +452,7 @@ Example: <code>redo</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-task-code-edit-e-code"><a class="link" href="#editing-a-task-code-edit-e-code">2.8. Editing a task : <code>edit / e</code></a></h3>
+<h3 id="editing-a-task-code-edit-e-code"><a class="link" href="#editing-a-task-code-edit-e-code">2.10. Editing a task : <code>edit / e</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>edit {index} n/[new name] s/[new start] e/[new end] d/[new description] t/[new tags] a/[new alarm]</code><br>
 Example: `edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1630 d/Special Term t/NUS `</p>
@@ -435,7 +476,7 @@ Example: `edit 2 n/CS2103 s/19/06/17 1000 e/28/07/17 1630 d/Special Term t/NUS `
 </div>
 </div>
 <div class="sect2">
-<h3 id="marking-a-task-as-complete-code-mark-m-code"><a class="link" href="#marking-a-task-as-complete-code-mark-m-code">2.9. Marking a task as complete : <code>mark / m</code></a></h3>
+<h3 id="marking-a-task-as-complete-code-mark-m-code"><a class="link" href="#marking-a-task-as-complete-code-mark-m-code">2.11. Marking a task as complete : <code>mark / m</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>mark {index}</code><br>
 Example: <code>mark 4</code></p>
@@ -453,7 +494,7 @@ Example: <code>mark 4</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="marking-a-task-as-incomplete-code-unmark-un-code"><a class="link" href="#marking-a-task-as-incomplete-code-unmark-un-code">2.10. Marking a task as incomplete : <code>unmark / un</code></a></h3>
+<h3 id="marking-a-task-as-incomplete-code-unmark-un-code"><a class="link" href="#marking-a-task-as-incomplete-code-unmark-un-code">2.12. Marking a task as incomplete : <code>unmark / un</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>unmark {index}</code><br>
 Example: <code>unmark 4</code></p>
@@ -471,7 +512,7 @@ Example: <code>unmark 4</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-the-default-options-code-option-o-code"><a class="link" href="#editing-the-default-options-code-option-o-code">2.11. Editing the default options : <code>option / o</code></a></h3>
+<h3 id="editing-the-default-options-code-option-o-code"><a class="link" href="#editing-the-default-options-code-option-o-code">2.13. Editing the default options : <code>option / o</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>option a/[alarm] m/[mark completion automatically]</code><br>
 Example: <code>option a/1 minute m/true</code></p>
@@ -524,7 +565,7 @@ Example: <code>option a/1 minute m/true</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="save-command"><a class="link" href="#save-command">2.12. Saving list : <code>save / s</code></a></h3>
+<h3 id="save-command"><a class="link" href="#save-command">2.14. Saving list : <code>save / s</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>save [directory]</code><br>
 Example: <code>save C:\Program Files\Common Files\2Do.xml</code></p>
@@ -551,7 +592,7 @@ Example: <code>save C:\Program Files\Common Files\2Do.xml</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="loading-list-code-load-code"><a class="link" href="#loading-list-code-load-code">2.13. Loading list : <code>load</code></a></h3>
+<h3 id="loading-list-code-load-code"><a class="link" href="#loading-list-code-load-code">2.15. Loading list : <code>load</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>load [directory]</code><br>
 Example: <code>load C:\Program Files\Common Files\2Do.xml</code></p>
@@ -569,7 +610,7 @@ Example: <code>load C:\Program Files\Common Files\2Do.xml</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-list-code-clear-c-code"><a class="link" href="#clearing-list-code-clear-c-code">2.14. Clearing list : <code>clear / c</code></a></h3>
+<h3 id="clearing-list-code-clear-c-code"><a class="link" href="#clearing-list-code-clear-c-code">2.16. Clearing list : <code>clear / c</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>clear `<br>
 Example: `clear</code></p>
@@ -590,7 +631,7 @@ Example: `clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="quitting-2do-code-exit-quit-q-code"><a class="link" href="#quitting-2do-code-exit-quit-q-code">2.15. Quitting 2Do : <code>exit / quit / q</code></a></h3>
+<h3 id="quitting-2do-code-exit-quit-q-code"><a class="link" href="#quitting-2do-code-exit-quit-q-code">2.17. Quitting 2Do : <code>exit / quit / q</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>quit</code><br>
 Example: <code>quit</code></p>
@@ -645,14 +686,24 @@ Example: <code>quit</code></p>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>help add</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">add / a /+</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add / a /<br></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">add n/{name} s/[start] e/[end] d/[description] t/[tag1, tag2,&#8230;&#8203;] a/[alarm]</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">`add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days `</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>add n/CS2103 Project V0.1 s/03/05/17 2359 e/04/05/17 1159 d/Special Term t/NUS a/2 days</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add tag / a tag / + tag</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">add tag {tag name} {indices of the tasks to include under the tag}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>add tag NUS 1,2,3,8</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">delete / del / d / -</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">delete [-h] {index}</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>delete 1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">delete tag / del tag / d tag / - tag</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">delete tag {index of tag in tag list}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>delete tag 7</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">list / l</p></td>
@@ -721,7 +772,7 @@ Example: <code>quit</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-24 04:45:52 +00:00
+Last updated 2017-07-24 07:12:14 +00:00
 </div>
 </div>
 </body>
