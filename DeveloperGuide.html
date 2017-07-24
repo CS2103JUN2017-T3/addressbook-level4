@@ -468,13 +468,44 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><code>Logic</code> uses the <code>Parser</code> class to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>The command parsing of each specific command is encapsulated as a <code>CommandParser</code> object for the their respective parser objects (e.g. DeleteCommandParser).</p>
 </li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. deleting a task) and/or raise events.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>The command execution can affect the <a href="#model"><code>Model</code></a> (e.g. adding a task) and/or raise events.</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <a href="#ui"><code>UI</code></a>.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <a href="#ui"><code>UI</code></a>.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; e2316be8bb13260459565087a7d96bb8606b2dc9</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command execution can affect the <a href="#model"><code>Model</code></a> (e.g. deleting a task) and/or raise events.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <a href="#ui"><code>UI</code></a>.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3c0b763810c18937d0cf92df331c1ae1e2ed24bd</p>
 </li>
 </ol>
 </div>
@@ -2205,7 +2236,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-24 08:27:52 +00:00
+Last updated 2017-07-24 09:19:24 +00:00
 </div>
 </div>
 </body>
