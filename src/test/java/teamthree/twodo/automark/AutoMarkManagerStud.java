@@ -20,7 +20,7 @@ import teamthree.twodo.model.task.ReadOnlyTask;
 import teamthree.twodo.model.task.TaskWithDeadline;
 import teamthree.twodo.model.task.exceptions.TaskNotFoundException;
 
-// @@author A0139267W-reused
+//@@author A0139267W-reused
 // A copy of AutoMarkManager to bypass static declarations for testing purposes
 public class AutoMarkManagerStud extends ComponentManager {
     /**

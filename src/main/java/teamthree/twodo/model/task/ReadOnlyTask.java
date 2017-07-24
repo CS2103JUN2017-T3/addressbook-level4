@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import teamthree.twodo.model.tag.Tag;
-//@@author A0124399W - reused
+//@@author A0124399W-reused
 /**
  * A read-only immutable interface for a Task in the TaskList.
  * Implementations should guarantee: details are present and not null, field values are validated.

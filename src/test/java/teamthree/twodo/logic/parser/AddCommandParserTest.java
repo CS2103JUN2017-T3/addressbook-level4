@@ -26,7 +26,7 @@ import teamthree.twodo.model.task.Task;
 import teamthree.twodo.testutil.FloatingTaskBuilder;
 import teamthree.twodo.testutil.TaskWithDeadlineBuilder;
 
-//@@author A0124399W - reused
+//@@author A0124399W-reused
 public class AddCommandParserTest {
     private static final String NAME_DESC_MOD = PREFIX_NAME + VALID_NAME_CSMOD;
     private static final String NAME_DESC_EVENT = PREFIX_NAME + VALID_NAME_EVENT;

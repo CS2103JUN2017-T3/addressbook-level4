@@ -46,7 +46,7 @@ public class TaskCard extends UiPart<Region> {
         if (task.isCompleted()) {
             completionStatus = "Complete";
         }
-        //@@author A0124399W - reused
+        //@@author A0124399W-reused
         if (task instanceof TaskWithDeadline) {
             deadline.setText(task.getDeadline().get().toString());
             if (isOverdue(task) && !task.isCompleted()) {

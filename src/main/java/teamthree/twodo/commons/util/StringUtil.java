@@ -176,28 +176,7 @@ public class StringUtil {
         return Optional.of(days[indexAndDistance[0]]);
 
     }
-    /*
-    public static Optional<String> getAutoCorrectedPrefix(String userPrefix) {
 
-        String[] commonPrefixes = { "next", "week", "this", "thu", "fri", "sat", "sun" };
-        int[] indexAndDistance = getIndexOfMostSimilarWord(userPrefix, commonPrefixes);
-        if (indexAndDistance[1] >= userPrefix.length()) {
-            //This means there was no close match
-            return Optional.empty();
-        }
-        return Optional.of(commonPrefixes[indexAndDistance[0]]);
-
-    }
-*/
-    /*public static Optional<String> getAutoCorrectedWord(String userInputForDeadline) {
-        if (userInputForDeadline.trim().matches(".*\\d+.*")) {
-            final Matcher matcher = Pattern.compile("[^\\d]").matcher(userInputForDeadline);
-        }
-        //dictionary of most common words for deadline input
-        String[] dictionary = { "monday", "tuesday", "wednesday"
-        , "thursday", "friday", "saturday", "sunday", "next", "week", "year", "month" };
-
-    }*/
     /**
      * Finds the string most similar to the argument inside an array of strings
      * and returns its index and minimum edit distance.

@@ -33,7 +33,7 @@ import teamthree.twodo.model.task.exceptions.TaskNotFoundException;
 import teamthree.twodo.testutil.FloatingTaskBuilder;
 import teamthree.twodo.testutil.TaskWithDeadlineBuilder;
 
-// @@author A0124399W - reused
+//@@author A0124399W-reused
 public class AddCommandTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();

@@ -12,7 +12,7 @@ import org.junit.Test;
 import teamthree.twodo.logic.commands.ListCommand;
 import teamthree.twodo.testutil.TaskUtil;
 import teamthree.twodo.ui.CommandBox;
-//@@author A0124399W - reused
+//@@author A0124399W-reused
 public class CommandBoxTest extends TaskListGuiTest {
     private static final String COMMAND_THAT_SUCCEEDS = ListCommand.COMMAND_WORD + " /f";
     private static final String COMMAND_THAT_FAILS = "invalid command";

@@ -4,7 +4,7 @@ ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 
 https://travis-ci.org/CS2103JUN2017-T3/main[image:https://travis-ci.org/CS2103JUN2017-T3/main.svg?branch=master[Build Status]]
 https://ci.appveyor.com/project/yogamurti/main[image:https://ci.appveyor.com/api/projects/status/02as2t45ruakidb4/branch/master?svg=true[Build status]]
-https://coveralls.io/github/CS2103JUN2017-T3/main?branch=master[image:https://coveralls.io/repos/github/CS2103JUN2017-T3/main/badge.svg?branch=master&dummy=no_cache[Coverage Status]]
+https://coveralls.io/github/CS2103JUN2017-T3/main?branch=master[image:https://coveralls.io/repos/github/CS2103JUN2017-T3/main/badge.svg?branch=master&dummy=no_more_cache[Coverage Status]]
 https://www.codacy.com/app/yogamurti/main?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CS2103JUN2017-T3/main&amp;utm_campaign=Badge_Grade[image:https://api.codacy.com/project/badge/Grade/293bb6c5af064a5f851765c0f9d2d3b4[Codacy Badge]]
 
 ifdef::env-github[]

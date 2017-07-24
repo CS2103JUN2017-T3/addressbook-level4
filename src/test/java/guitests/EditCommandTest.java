@@ -25,7 +25,7 @@ import teamthree.twodo.testutil.TaskUtil;
 import teamthree.twodo.testutil.TaskWithDeadlineBuilder;
 
 
-//@@author A0124399W - reused
+//@@author A0124399W-reused
 
 public class EditCommandTest extends TaskListGuiTest {
 

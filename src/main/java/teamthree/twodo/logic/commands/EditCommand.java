@@ -28,7 +28,7 @@ import teamthree.twodo.model.task.TaskWithDeadline;
 import teamthree.twodo.model.task.exceptions.DuplicateTaskException;
 import teamthree.twodo.model.task.exceptions.TaskNotFoundException;
 
-// @@author A0124399W
+//@@author A0124399W
 // Edits the details of an existing task in the Tasklist.
 public class EditCommand extends Command {
 

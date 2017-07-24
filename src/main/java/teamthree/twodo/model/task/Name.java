@@ -3,7 +3,7 @@ package teamthree.twodo.model.task;
 import static java.util.Objects.requireNonNull;
 
 import teamthree.twodo.commons.exceptions.IllegalValueException;
-//@@author A0124399W - reused
+//@@author A0124399W-reused
 /**
  * Represents a Task's name in the TaskList.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}

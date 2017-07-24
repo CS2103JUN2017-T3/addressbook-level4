@@ -11,7 +11,7 @@ import teamthree.twodo.model.tag.Tag;
 import teamthree.twodo.model.task.ReadOnlyTask;
 import teamthree.twodo.model.task.exceptions.TaskNotFoundException;
 
-//@@author A0162253M - reused
+//@@author A0162253M-reused
 // Deletes a task identified using its last displayed index from the TaskList.
 public class DeleteCommand extends Command {
 

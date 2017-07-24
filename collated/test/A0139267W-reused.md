@@ -34,16 +34,12 @@ public class AutoMarkManagerStud extends ComponentManager {
     // Enables or disables the auto-completion functionality
     public static void setToRun(boolean setting) {
         setToRun = setting;
-        if (setting) {
-            // TODO need to do something here to enhance the "only updates whenever there's a new command" issue
-        }
     }
 
     /**
      * Synchronizes internal uncompleted list with the main task list
      *
-     * @param masterList
-     *            Full list of tasks from the task list
+     * @param masterList Full list of tasks from the task list
      */
     private synchronized void syncWithMasterTaskList(List<ReadOnlyTask> masterList) {
         if (masterList == null || masterList.isEmpty()) {
@@ -127,8 +123,7 @@ public class AutoMarkManagerStud extends ComponentManager {
      * next activity on the uncompleted list. Called only after a
      * DeadlineTimeReachedEvent.
      *
-     * @param completedTasks
-     *            the tasks which were sent with the DeadlineTimeReachedEvent
+     * @param completedTasks The tasks which were sent with the DeadlineTimeReachedEvent
      */
 
     private synchronized void updateInternalData(List<ReadOnlyTask> completedTasks) {
@@ -178,7 +173,7 @@ public class AutoMarkManagerStud extends ComponentManager {
 
     // Synchronizes the uncompleted list with the master list when there is a change
     @Subscribe
-    public void handleTaskBookChangedEvent(TaskListChangedEvent event) {
+    public void handleTaskListChangedEvent(TaskListChangedEvent event) {
         syncWithMasterTaskList(model.getTaskList().getTaskList());
     }
 
