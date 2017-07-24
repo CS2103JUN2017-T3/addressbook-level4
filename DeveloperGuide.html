@@ -37,10 +37,10 @@
 <li><a href="#design">2. Design</a>
 <ul class="sectlevel2">
 <li><a href="#architecture">2.1. Architecture</a></li>
-<li><a href="#ui-component">2.2. UI component</a></li>
-<li><a href="#logic-component">2.3. Logic component</a></li>
-<li><a href="#model-component">2.4. Model component</a></li>
-<li><a href="#storage-component">2.5. Storage component</a></li>
+<li><a href="#ui">2.2. UI component</a></li>
+<li><a href="#logic">2.3. Logic component</a></li>
+<li><a href="#model">2.4. Model component</a></li>
+<li><a href="#storage">2.5. Storage component</a></li>
 <li><a href="#common-classes">2.6. Common classes</a></li>
 </ul>
 </li>
@@ -339,7 +339,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.2 : Class Diagram of the Logic Component</em></p>
+<p><em>Figure 2.1.2 : Simplified class Diagram of the Logic Component</em></p>
 </div>
 <h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
 <div class="paragraph">
@@ -393,7 +393,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui-component"><a class="link" href="#ui-component">2.2. UI component</a></h3>
+<h3 id="ui"><a class="link" href="#ui">2.2. UI component</a></h3>
 <div class="paragraph">
 <p>Author: Yogamurti Sutanto</p>
 </div>
@@ -409,30 +409,44 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> : <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TaskListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The <code>UI</code> consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>CategoryListPanel</code>, etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses the <em>JavaFx UI</em> framework. The layout of these <code>UI</code> parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/java/teamthree/twodo/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103JUN2017-T3/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component,</p>
+<p><strong>Model-View-Controller Pattern</strong><br>
+<em>2Do</em> <strong>decouples</strong> its data, presentation, and control logic by separating them into three different components: <strong>Model</strong>, <strong>View</strong> and <strong>Controller</strong>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>Model: The <code>UI</code> component&#8217;s <code>ResultDisplay</code>, <code>CategoryListPanel</code>, <code>TaskListPanel</code>, <code>StatusBarFooter</code> and <code>HelpWindow</code> binds themselves to some data in the <a href="#model"><code>Model</code></a> component, which stores and maintains data in <em>2Do</em>.</p>
 </li>
 <li>
-<p>Binds itself to some data in the <code>Model</code> so that the UI can auto-update when data in the <code>Model</code> change.</p>
+<p>View: The <code>UI</code> component is responsible for displaying data, interacting with the user through the <a href="#logic"><code>Logic</code></a> component, and getting automatic data updates from the <a href="#model"><code>Model</code></a> component.</p>
 </li>
 <li>
-<p>Responds to events raised from various parts of the App and updates the UI accordingly.</p>
+<p>Controller: The <code>UI</code> component&#8217;s <code>CommandBox</code> is responsible for detecting user command inputs and forwarding them to the <a href="#logic"><code>Logic</code></a> component, which executes the commands.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><strong>Observer Pattern</strong><br>
+<em>2Do</em> utilizes the <em>observer pattern</em> to <strong>avoid direct coupling</strong> between the <code>UI</code> component and other components.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component&#8217;s constituents that depends on data from the <a href="#model"><code>Model</code></a> component, such as its <code>TaskListPanel</code> constituent, requires notification whenever the <a href="#model"><code>Model</code></a> component updates.</p>
+</div>
+<div class="paragraph">
+<p>This is done by the <em>TaskListChangedEvent</em>.</p>
+</div>
+<div class="paragraph">
+<p>Whenever the data in the <a href="#model"><code>Model</code></a> component updates, <em>2Do</em> notifies its relevant <code>UI</code> constituents by calling a <em>indicateTaskListChanged()</em> operation, which raises a new <em>TaskListChangedEvent</em>. This event will call the relevant <code>UI</code> constituents to update their data from the <a href="#model"><code>Model</code></a> component and display the updated data.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="logic-component"><a class="link" href="#logic-component">2.3. Logic component</a></h3>
+<h3 id="logic"><a class="link" href="#logic">2.3. Logic component</a></h3>
 <div class="paragraph">
 <p>Author: Ang Lang Yi</p>
 </div>
@@ -457,10 +471,10 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a task) and/or raise events.</p>
+<p>The command execution can affect the <a href="#model"><code>Model</code></a> (e.g. adding a task) and/or raise events.</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <a href="#ui"><code>UI</code></a>.</p>
 </li>
 </ol>
 </div>
@@ -477,7 +491,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="model-component"><a class="link" href="#model-component">2.4. Model component</a></h3>
+<h3 id="model"><a class="link" href="#model">2.4. Model component</a></h3>
 <div class="paragraph">
 <p>Author: V Narendar Nag</p>
 </div>
@@ -513,7 +527,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="storage-component"><a class="link" href="#storage-component">2.5. Storage component</a></h3>
+<h3 id="storage"><a class="link" href="#storage">2.5. Storage component</a></h3>
 <div class="paragraph">
 <p>Author: Teo Shu Qi</p>
 </div>
@@ -882,7 +896,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">save my to-do list as a text file</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">save my to-do list as a readable file</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">have a back-up copy of my to-do list and be able to view it across multiple devices</p></td>
 </tr>
 <tr>
@@ -1015,6 +1029,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="paragraph">
 <p>For all use cases below, the <strong>System</strong> is <code>2Do</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise.</p>
 </div>
+<hr>
 <h3 id="use-case-display-help-guide" class="discrete">Use case: Display help guide</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1022,10 +1037,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests for help guide</p>
+<p>User requests for the help guide</p>
 </li>
 <li>
-<p>System displays help guide</p>
+<p>System displays the help guide</p>
 </li>
 </ol>
 </div>
@@ -1056,10 +1071,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to add a floating task with the name field filled and the end and recurrence fields empty</p>
+<p>User requests to add a floating task with the name field filled and the end field empty</p>
 </li>
 <li>
-<p>System adds the floating task and shows a success message</p>
+<p>System adds the floating task and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1088,7 +1103,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1b1. System displays an error message highlighting this issue</p>
+<p>1b1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1106,7 +1121,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to add a task, with a deadline, with the name and end fields filled and the start field empty</p>
 </li>
 <li>
-<p>System adds the task, with a deadline, and shows a success message</p>
+<p>System adds the task, with a deadline, and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1140,7 +1155,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to add an event with the name, start and end fields filled</p>
 </li>
 <li>
-<p>System adds the event and shows a success message</p>
+<p>System adds the event and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1169,41 +1184,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1b1. System automatically adjusts the end time to the following day and displays a message highlighting this automatic adjustment</p>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
-<hr>
-<h3 id="use-case-add-a-recurring-task" class="discrete">Use case: Add a recurring task</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to add a recurring task with the name, end and recurrence fields filled</p>
-</li>
-<li>
-<p>System adds the recurring task and shows a success message</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="paragraph">
-<p>1a. User input is invalid</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>1a1. System displays an error message</p>
+<p>1b1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1218,16 +1199,16 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to delete a task using its name</p>
+<p>User searches for a task using <strong>list</strong> or <strong>find</strong></p>
 </li>
 <li>
-<p>System prompts the user to confirm deletion</p>
+<p>System displays all relevant tasks</p>
 </li>
 <li>
-<p>User confirms deletion</p>
+<p>User requests to delete the task by using its <a href="#index">index</a></p>
 </li>
 <li>
-<p>System deletes the task and shows a success message</p>
+<p>System deletes the task and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1251,26 +1232,15 @@ b. Require developers to download those libraries manually (this creates extra w
 </blockquote>
 </div>
 <div class="paragraph">
-<p>1b. Multiple tasks with same name has been detected</p>
+<p>3a. User input is invalid</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>1b1. System displays all relevant tasks, and their <a href="#index">indices</a>, and prompts the user to choose the intended task to delete<br>
-1b2. User chooses the task <a href="#index">index</a></p>
+<p>3a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case resumes at step 2</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>3a. User does not confirm the request</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Use case ends</p>
 </div>
 </blockquote>
 </div>
@@ -1296,12 +1266,12 @@ b. Require developers to download those libraries manually (this creates extra w
 <p><strong>Extensions</strong></p>
 </div>
 <div class="paragraph">
-<p>2a. No tasks to display</p>
+<p>1a. User input is invalid</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>2a1. System displays a no task to display message</p>
+<p>1a1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1342,19 +1312,6 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p>2b. No tasks to display</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>2b1. System displays a no task to display message</p>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
 <hr>
 <h3 id="use-case-undo-last-action" class="discrete">Use case: Undo last action</h3>
 <div class="paragraph">
@@ -1366,7 +1323,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to undo the last action</p>
 </li>
 <li>
-<p>System undoes the last action and shows a success message</p>
+<p>System undoes the last action and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1400,7 +1357,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to redo the last undo command</p>
 </li>
 <li>
-<p>System redoes the last undo command and shows a success message</p>
+<p>System redoes the last undo command and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1440,7 +1397,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to edit the task by using its <a href="#index">index</a></p>
 </li>
 <li>
-<p>System updates the task and shows a success message</p>
+<p>System updates the task and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1457,19 +1414,6 @@ b. Require developers to download those libraries manually (this creates extra w
 <blockquote>
 <div class="paragraph">
 <p>1a1. System displays an error message</p>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>2b. No tasks to display</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1503,10 +1447,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>System displays all relevant tasks</p>
 </li>
 <li>
-<p>User requests to mark the task as complete by using its index</p>
+<p>User requests to mark the task as complete by <a href="#index">index</a></p>
 </li>
 <li>
-<p>System updates the task and shows a success message</p>
+<p>System updates the task and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1523,19 +1467,6 @@ b. Require developers to download those libraries manually (this creates extra w
 <blockquote>
 <div class="paragraph">
 <p>1a1. System displays an error message</p>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>2b. No tasks to display</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>2b1. System displays a no task to display message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1576,16 +1507,16 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User searches for a completed task using <strong>list -h</strong> or <strong>find -h</strong></p>
+<p>User searches for a completed task using <strong>list /h</strong> or <strong>find /h</strong></p>
 </li>
 <li>
 <p>System displays all relevant tasks</p>
 </li>
 <li>
-<p>User requests to mark the task as incomplete by using its index</p>
+<p>User requests to mark the task as incomplete by <a href="#index">index</a></p>
 </li>
 <li>
-<p>System updates the task and shows a success message</p>
+<p>System updates the task and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1609,19 +1540,6 @@ b. Require developers to download those libraries manually (this creates extra w
 </blockquote>
 </div>
 <div class="paragraph">
-<p>2b. No tasks to display</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>2b1. System displays a no task to display message</p>
-</div>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
 <p>3a. User input is invalid</p>
 </div>
 <div class="quoteblock">
@@ -1635,7 +1553,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </blockquote>
 </div>
 <div class="paragraph">
-<p>3b. Task is already marked as complete</p>
+<p>3b. Task is already marked as incomplete</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -1661,10 +1579,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>System displays its general options</p>
 </li>
 <li>
-<p>User requests to change the general options</p>
+<p>User requests to change the general options for the session</p>
 </li>
 <li>
-<p>System updates its general options</p>
+<p>System updates its general options for the session and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1675,12 +1593,38 @@ b. Require developers to download those libraries manually (this creates extra w
 <p><strong>Extensions</strong></p>
 </div>
 <div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
 <p>3a. User input is invalid</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
 <p>3a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>3b. Options inputted are the same as the current general options</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>3b1. System displays an error message</p>
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
@@ -1698,7 +1642,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to save the to-do list</p>
 </li>
 <li>
-<p>System saves the current to-do list and exports it as a text file in the directory specified</p>
+<p>System saves the current to-do list, exports it as an <em>xml</em> file in the directory specified and displays a success message</p>
 </li>
 </ol>
 </div>
@@ -1729,16 +1673,10 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to load a to-do list text file into the system</p>
+<p>User requests to load a to-do list xml file into the system</p>
 </li>
 <li>
-<p>System loads the to-do list and prompts the user to relaunch the application to update its task list</p>
-</li>
-<li>
-<p>User relaunches the application</p>
-</li>
-<li>
-<p>System displays the loaded to-do list</p>
+<p>System loads the to-do list and displays the loaded to-do list</p>
 </li>
 </ol>
 </div>
@@ -1772,13 +1710,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to clear the to-do list</p>
 </li>
 <li>
-<p>System prompts the user to confirm the clear request</p>
-</li>
-<li>
-<p>User confirms the clear request</p>
-</li>
-<li>
-<p>System clears the to-do list and shows a success message</p>
+<p>System clears the to-do list</p>
 </li>
 </ol>
 </div>
@@ -1801,16 +1733,6 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p>3a. User does not confirm the request</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</blockquote>
-</div>
 <hr>
 <h3 id="use-case-quit-system" class="discrete">Use case: Quit system</h3>
 <div class="paragraph">
@@ -1828,6 +1750,22 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="paragraph">
 <p>Use case ends</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="paragraph">
+<p>1a. User input is invalid</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1a1. System displays an error message</p>
+</div>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</blockquote>
 </div>
 </div>
 </div>
@@ -2173,7 +2111,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-23 11:52:39 +00:00
+Last updated 2017-07-24 02:39:27 +00:00
 </div>
 </div>
 </body>

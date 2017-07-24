@@ -38,7 +38,7 @@
 <li><a href="#marking-a-task-as-complete-code-mark-m-code">2.9. Marking a task as complete : <code>mark / m</code></a></li>
 <li><a href="#marking-a-task-as-incomplete-code-unmark-un-code">2.10. Marking a task as incomplete : <code>unmark / un</code></a></li>
 <li><a href="#editing-the-default-options-code-option-o-code">2.11. Editing the default options : <code>option / o</code></a></li>
-<li><a href="#saving-list-code-save-s-code">2.12. Saving list : <code>save / s</code></a></li>
+<li><a href="#save-command">2.12. Saving list : <code>save / s</code></a></li>
 <li><a href="#loading-list-code-load-code">2.13. Loading list : <code>load</code></a></li>
 <li><a href="#clearing-list-code-clear-c-code">2.14. Clearing list : <code>clear / c</code></a></li>
 <li><a href="#quitting-2do-code-exit-quit-q-code">2.15. Quitting 2Do : <code>exit / quit / q</code></a></li>
@@ -481,33 +481,42 @@ Example: <code>option a/1 minute m/true</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Option without parameters will show the general options that the user can edit and their explanations</p>
+<p>Option without parameters will show the application&#8217;s options, that the user can edit, and their explanations</p>
 </li>
 <li>
-<p>Default reminder alarm timing, before the deadline, can be edited</p>
+<p>The default reminder alarm timing, before the deadline, can be edited</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Default setting is 1 days</p>
+<p>The default option is 1 day</p>
 </li>
 <li>
 <p>Range for reminders: 1 minute to 7 days</p>
 </li>
+<li>
+<p>Changes will only take effect for subsequent tasks that are added</p>
+</li>
 </ul>
 </div>
 </li>
 <li>
-<p>Default automatic mark for completion setting can be edited</p>
+<p>The default automatic mark as complete setting can be edited</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Default setting will prompt user checking if the activity was completed</p>
+<p>By default, this feature is disabled</p>
 </li>
 <li>
-<p>This can be changed to automatically marking the activity as completed without prompting</p>
+<p>This can be enabled to automatically mark tasks as completed once their deadline has passed</p>
+</li>
+<li>
+<p>Once this is enabled, all existing tasks that are past their deadlines will be marked as complete as well</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>The amended options will last for the remainder of the session and will reset to the default options once the application closes</p>
 </li>
 </ul>
 </div>
@@ -515,27 +524,23 @@ Example: <code>option a/1 minute m/true</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-list-code-save-s-code"><a class="link" href="#saving-list-code-save-s-code">2.12. Saving list : <code>save / s</code></a></h3>
+<h3 id="save-command"><a class="link" href="#save-command">2.12. Saving list : <code>save / s</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>save [directory]</code><br>
-Example: <code>save C:\Program Files\Common Files\2Do.txt</code></p>
+Example: <code>save C:\Program Files\Common Files\2Do.xml</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Saves the current to-do list and exports it as a text file in the directory specified</p>
+<p>Saves the current to-do list and exports it as an <em>xml</em> file in the directory specified</p>
 </li>
 <li>
-<p>By default, the file will be saved as to-do.txt on  <em>C:\Program Files</em></p>
-<div class="ulist">
-<ul>
+<p>By default, the file will be saved as <em>data/2Do.xml</em> in the directory of the application</p>
+</li>
 <li>
 <p>2Do creates the file if it does not exist</p>
-</li>
-</ul>
-</div>
 </li>
 <li>
 <p>2Do uses the to-do list in the last specified file path when it launches</p>
@@ -549,7 +554,7 @@ Example: <code>save C:\Program Files\Common Files\2Do.txt</code></p>
 <h3 id="loading-list-code-load-code"><a class="link" href="#loading-list-code-load-code">2.13. Loading list : <code>load</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>load [directory]</code><br>
-Example: <code>load C:\Program Files\Common Files\2Do.txt</code></p>
+Example: <code>load C:\Program Files\Common Files\2Do.xml</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -557,9 +562,6 @@ Example: <code>load C:\Program Files\Common Files\2Do.txt</code></p>
 <ul>
 <li>
 <p>Loads the to-do list present in the directory specified</p>
-</li>
-<li>
-<p>To then view the loaded to-do list, relaunch 2Do to update its task list</p>
 </li>
 </ul>
 </div>
@@ -612,7 +614,7 @@ Example: <code>quit</code></p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I save my to-do list?<br>
-<strong>A</strong>: The data is saved in the hard disk automatically, by default as <strong>C:\Program Files\2Do.txt</strong>, after any command that changes the data. There is no need to save manually.</p>
+<strong>A</strong>: The data is saved in the hard drive automatically, by default as <em>data/2Do.xml</em> in the directory of the application, after any command that changes the data. There is no need to save manually. However, you may save it as another file using our <a href="#save-command">Save Command</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
@@ -695,12 +697,12 @@ Example: <code>quit</code></p>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">save / s</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">save [directory]</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>save C:\Program Files\Common Files\2Do.txt</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>save C:\Program Files\Common Files\2Do.xml</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">load</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">load [directory]</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>load C:\Program Files\Common Files\2Do.txt</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>load C:\Program Files\Common Files\2Do.xml</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">clear / c</p></td>
@@ -719,7 +721,7 @@ Example: <code>quit</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-23 11:52:39 +00:00
+Last updated 2017-07-24 02:39:27 +00:00
 </div>
 </div>
 </body>
